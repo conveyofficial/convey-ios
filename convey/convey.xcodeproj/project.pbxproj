@@ -1,0 +1,717 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06F9C20939F2454E05111B41 /* Pods_convey__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */; };
+		A5914DB1018B5E86D0688A63 /* Pods_convey__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */; };
+		F82463032731CE9D008160E5 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463002731CE9A008160E5 /* LandingViewModel.swift */; };
+		F82463042731CE9D008160E5 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463012731CE9B008160E5 /* SignInViewModel.swift */; };
+		F82463052731CE9D008160E5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463022731CE9D008160E5 /* SignUpViewModel.swift */; };
+		F82463082731CEB2008160E5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463062731CEB1008160E5 /* SignUpView.swift */; };
+		F82463092731CEB2008160E5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463072731CEB2008160E5 /* SignInView.swift */; };
+		F824630D2731CFE3008160E5 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824630C2731CFE3008160E5 /* CustomTabBar.swift */; };
+		F824630F2731CFF1008160E5 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824630E2731CFF1008160E5 /* TabCurve.swift */; };
+		F82463112731D014008160E5 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463102731D014008160E5 /* RecordView.swift */; };
+		F82463132731D02D008160E5 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463122731D02D008160E5 /* SummaryView.swift */; };
+		F82463152731D08D008160E5 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463142731D08D008160E5 /* RecordViewModel.swift */; };
+		F82463172731D204008160E5 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463162731D204008160E5 /* SummaryViewModel.swift */; };
+		F82463192731D488008160E5 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463182731D488008160E5 /* AuthData.swift */; };
+		F824631B2731D4E0008160E5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824631A2731D4E0008160E5 /* CustomTextField.swift */; };
+		F824631D2731D50F008160E5 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824631C2731D50F008160E5 /* ViewUtils.swift */; };
+		F85150192730D97E0089C7C4 /* conveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150062730D9790089C7C4 /* conveyApp.swift */; };
+		F851501A2730D97E0089C7C4 /* conveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150062730D9790089C7C4 /* conveyApp.swift */; };
+		F851501B2730D97E0089C7C4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150072730D9790089C7C4 /* LandingView.swift */; };
+		F851501C2730D97E0089C7C4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150072730D9790089C7C4 /* LandingView.swift */; };
+		F851501D2730D97E0089C7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85150082730D97E0089C7C4 /* Assets.xcassets */; };
+		F851501E2730D97E0089C7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85150082730D97E0089C7C4 /* Assets.xcassets */; };
+		F85150282731C3410089C7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150272731C3410089C7C4 /* AppDelegate.swift */; };
+		F85150292731C3410089C7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150272731C3410089C7C4 /* AppDelegate.swift */; };
+		F85150312731CC8E0089C7C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F85150302731CC8E0089C7C4 /* GoogleService-Info.plist */; };
+		F85150342731CD9C0089C7C4 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150322731CD9A0089C7C4 /* AppModule.swift */; };
+		F85150352731CD9C0089C7C4 /* ViewModelModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150332731CD9C0089C7C4 /* ViewModelModule.swift */; };
+		F85150382731CDAC0089C7C4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150362731CDAB0089C7C4 /* AuthService.swift */; };
+		F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150372731CDAC0089C7C4 /* FirestoreService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_convey__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C885DAE039CA2901F7B022D /* Pods-convey (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (macOS).release.xcconfig"; path = "Target Support Files/Pods-convey (macOS)/Pods-convey (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		83FB8B1D25594D984197D2DD /* Pods-convey (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).release.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		9FDDC1B7DE88F8F16BE7B03C /* Pods-convey (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (macOS).debug.xcconfig"; path = "Target Support Files/Pods-convey (macOS)/Pods-convey (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_convey__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82463002731CE9A008160E5 /* LandingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		F82463012731CE9B008160E5 /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		F82463022731CE9D008160E5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		F82463062731CEB1008160E5 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F82463072731CEB2008160E5 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F824630C2731CFE3008160E5 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		F824630E2731CFF1008160E5 /* TabCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCurve.swift; sourceTree = "<group>"; };
+		F82463102731D014008160E5 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		F82463122731D02D008160E5 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		F82463142731D08D008160E5 /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
+		F82463162731D204008160E5 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		F82463182731D488008160E5 /* AuthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthData.swift; sourceTree = "<group>"; };
+		F824631A2731D4E0008160E5 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F824631C2731D50F008160E5 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		F85150062730D9790089C7C4 /* conveyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conveyApp.swift; sourceTree = "<group>"; };
+		F85150072730D9790089C7C4 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		F85150082730D97E0089C7C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F851500D2730D97E0089C7C4 /* convey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = convey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85150102730D97E0089C7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85150152730D97E0089C7C4 /* convey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = convey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85150172730D97E0089C7C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F85150182730D97E0089C7C4 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F85150272731C3410089C7C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F85150302731CC8E0089C7C4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F85150322731CD9A0089C7C4 /* AppModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModule.swift; sourceTree = "<group>"; };
+		F85150332731CD9C0089C7C4 /* ViewModelModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelModule.swift; sourceTree = "<group>"; };
+		F85150362731CDAB0089C7C4 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F85150372731CDAC0089C7C4 /* FirestoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		FBAF9982C5B95020FB5A1B38 /* Pods-convey (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).debug.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F851500A2730D97E0089C7C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5914DB1018B5E86D0688A63 /* Pods_convey__iOS_.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85150122730D97E0089C7C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06F9C20939F2454E05111B41 /* Pods_convey__macOS_.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		389B7C9A3597291B79255342 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */,
+				3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		637A8BCD50FF64013A90D3D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBAF9982C5B95020FB5A1B38 /* Pods-convey (iOS).debug.xcconfig */,
+				83FB8B1D25594D984197D2DD /* Pods-convey (iOS).release.xcconfig */,
+				9FDDC1B7DE88F8F16BE7B03C /* Pods-convey (macOS).debug.xcconfig */,
+				3C885DAE039CA2901F7B022D /* Pods-convey (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F82462FE2731CE47008160E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F82463002731CE9A008160E5 /* LandingViewModel.swift */,
+				F82463012731CE9B008160E5 /* SignInViewModel.swift */,
+				F82463022731CE9D008160E5 /* SignUpViewModel.swift */,
+				F82463142731D08D008160E5 /* RecordViewModel.swift */,
+				F82463162731D204008160E5 /* SummaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F82462FF2731CE4C008160E5 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		F824630A2731CFC4008160E5 /* Authed */ = {
+			isa = PBXGroup;
+			children = (
+				F82463102731D014008160E5 /* RecordView.swift */,
+				F82463122731D02D008160E5 /* SummaryView.swift */,
+			);
+			path = Authed;
+			sourceTree = "<group>";
+		};
+		F824630B2731CFD4008160E5 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F824631A2731D4E0008160E5 /* CustomTextField.swift */,
+				F824630E2731CFF1008160E5 /* TabCurve.swift */,
+				F824630C2731CFE3008160E5 /* CustomTabBar.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		F85150002730D9780089C7C4 = {
+			isa = PBXGroup;
+			children = (
+				F85150052730D9790089C7C4 /* Shared */,
+				F851500F2730D97E0089C7C4 /* iOS */,
+				F85150162730D97E0089C7C4 /* macOS */,
+				F851500E2730D97E0089C7C4 /* Products */,
+				637A8BCD50FF64013A90D3D4 /* Pods */,
+				389B7C9A3597291B79255342 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F85150052730D9790089C7C4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F85150272731C3410089C7C4 /* AppDelegate.swift */,
+				F85150062730D9790089C7C4 /* conveyApp.swift */,
+				F851502A2731C34E0089C7C4 /* Business */,
+				F851502E2731C37D0089C7C4 /* Data */,
+				F851502B2731C3570089C7C4 /* UI */,
+				F851502F2731C38F0089C7C4 /* Utils */,
+				F85150082730D97E0089C7C4 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F851500E2730D97E0089C7C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F851500D2730D97E0089C7C4 /* convey.app */,
+				F85150152730D97E0089C7C4 /* convey.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F851500F2730D97E0089C7C4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F85150302731CC8E0089C7C4 /* GoogleService-Info.plist */,
+				F85150102730D97E0089C7C4 /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		F85150162730D97E0089C7C4 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F85150172730D97E0089C7C4 /* Info.plist */,
+				F85150182730D97E0089C7C4 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		F851502A2731C34E0089C7C4 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				F851502C2731C3600089C7C4 /* DI */,
+				F851502D2731C3660089C7C4 /* Services */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		F851502B2731C3570089C7C4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F85150072730D9790089C7C4 /* LandingView.swift */,
+				F82463072731CEB2008160E5 /* SignInView.swift */,
+				F82463062731CEB1008160E5 /* SignUpView.swift */,
+				F824630A2731CFC4008160E5 /* Authed */,
+				F824630B2731CFD4008160E5 /* CustomViews */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F851502C2731C3600089C7C4 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				F85150322731CD9A0089C7C4 /* AppModule.swift */,
+				F85150332731CD9C0089C7C4 /* ViewModelModule.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		F851502D2731C3660089C7C4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F85150362731CDAB0089C7C4 /* AuthService.swift */,
+				F85150372731CDAC0089C7C4 /* FirestoreService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F851502E2731C37D0089C7C4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F82462FE2731CE47008160E5 /* ViewModel */,
+				F851503A2731CDCA0089C7C4 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F851502F2731C38F0089C7C4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F824631C2731D50F008160E5 /* ViewUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F851503A2731CDCA0089C7C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F82462FF2731CE4C008160E5 /* Firestore */,
+				F82463182731D488008160E5 /* AuthData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F851500C2730D97E0089C7C4 /* convey (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F85150212730D97E0089C7C4 /* Build configuration list for PBXNativeTarget "convey (iOS)" */;
+			buildPhases = (
+				8B6ADA49D710DB1A4F2DC97C /* [CP] Check Pods Manifest.lock */,
+				F85150092730D97E0089C7C4 /* Sources */,
+				F851500A2730D97E0089C7C4 /* Frameworks */,
+				F851500B2730D97E0089C7C4 /* Resources */,
+				4CECDDE854D0F39D7734C4C3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "convey (iOS)";
+			productName = "convey (iOS)";
+			productReference = F851500D2730D97E0089C7C4 /* convey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F85150142730D97E0089C7C4 /* convey (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F85150242730D97E0089C7C4 /* Build configuration list for PBXNativeTarget "convey (macOS)" */;
+			buildPhases = (
+				F2641F0696CFB3D620263208 /* [CP] Check Pods Manifest.lock */,
+				F85150112730D97E0089C7C4 /* Sources */,
+				F85150122730D97E0089C7C4 /* Frameworks */,
+				F85150132730D97E0089C7C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "convey (macOS)";
+			productName = "convey (macOS)";
+			productReference = F85150152730D97E0089C7C4 /* convey.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F85150012730D9780089C7C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F851500C2730D97E0089C7C4 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					F85150142730D97E0089C7C4 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = F85150042730D9780089C7C4 /* Build configuration list for PBXProject "convey" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F85150002730D9780089C7C4;
+			productRefGroup = F851500E2730D97E0089C7C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F851500C2730D97E0089C7C4 /* convey (iOS) */,
+				F85150142730D97E0089C7C4 /* convey (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F851500B2730D97E0089C7C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F851501D2730D97E0089C7C4 /* Assets.xcassets in Resources */,
+				F85150312731CC8E0089C7C4 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85150132730D97E0089C7C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F851501E2730D97E0089C7C4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CECDDE854D0F39D7734C4C3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-convey (iOS)/Pods-convey (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-convey (iOS)/Pods-convey (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-convey (iOS)/Pods-convey (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B6ADA49D710DB1A4F2DC97C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-convey (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2641F0696CFB3D620263208 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-convey (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F85150092730D97E0089C7C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F82463152731D08D008160E5 /* RecordViewModel.swift in Sources */,
+				F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */,
+				F824630F2731CFF1008160E5 /* TabCurve.swift in Sources */,
+				F85150352731CD9C0089C7C4 /* ViewModelModule.swift in Sources */,
+				F824631B2731D4E0008160E5 /* CustomTextField.swift in Sources */,
+				F82463052731CE9D008160E5 /* SignUpViewModel.swift in Sources */,
+				F824630D2731CFE3008160E5 /* CustomTabBar.swift in Sources */,
+				F82463132731D02D008160E5 /* SummaryView.swift in Sources */,
+				F82463032731CE9D008160E5 /* LandingViewModel.swift in Sources */,
+				F82463192731D488008160E5 /* AuthData.swift in Sources */,
+				F85150282731C3410089C7C4 /* AppDelegate.swift in Sources */,
+				F82463082731CEB2008160E5 /* SignUpView.swift in Sources */,
+				F82463092731CEB2008160E5 /* SignInView.swift in Sources */,
+				F82463172731D204008160E5 /* SummaryViewModel.swift in Sources */,
+				F824631D2731D50F008160E5 /* ViewUtils.swift in Sources */,
+				F85150342731CD9C0089C7C4 /* AppModule.swift in Sources */,
+				F82463042731CE9D008160E5 /* SignInViewModel.swift in Sources */,
+				F85150382731CDAC0089C7C4 /* AuthService.swift in Sources */,
+				F851501B2730D97E0089C7C4 /* LandingView.swift in Sources */,
+				F82463112731D014008160E5 /* RecordView.swift in Sources */,
+				F85150192730D97E0089C7C4 /* conveyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F85150112730D97E0089C7C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F85150292731C3410089C7C4 /* AppDelegate.swift in Sources */,
+				F851501C2730D97E0089C7C4 /* LandingView.swift in Sources */,
+				F851501A2730D97E0089C7C4 /* conveyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F851501F2730D97E0089C7C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F85150202730D97E0089C7C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F85150222730D97E0089C7C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBAF9982C5B95020FB5A1B38 /* Pods-convey (iOS).debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NZD2D4P23;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.galenquinn.convey;
+				PRODUCT_NAME = convey;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F85150232730D97E0089C7C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83FB8B1D25594D984197D2DD /* Pods-convey (iOS).release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2NZD2D4P23;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.galenquinn.convey;
+				PRODUCT_NAME = convey;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F85150252730D97E0089C7C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FDDC1B7DE88F8F16BE7B03C /* Pods-convey (macOS).debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2NZD2D4P23;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galenquinn.convey;
+				PRODUCT_NAME = convey;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F85150262730D97E0089C7C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C885DAE039CA2901F7B022D /* Pods-convey (macOS).release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2NZD2D4P23;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galenquinn.convey;
+				PRODUCT_NAME = convey;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F85150042730D9780089C7C4 /* Build configuration list for PBXProject "convey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F851501F2730D97E0089C7C4 /* Debug */,
+				F85150202730D97E0089C7C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F85150212730D97E0089C7C4 /* Build configuration list for PBXNativeTarget "convey (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F85150222730D97E0089C7C4 /* Debug */,
+				F85150232730D97E0089C7C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F85150242730D97E0089C7C4 /* Build configuration list for PBXNativeTarget "convey (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F85150252730D97E0089C7C4 /* Debug */,
+				F85150262730D97E0089C7C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F85150012730D9780089C7C4 /* Project object */;
+}
