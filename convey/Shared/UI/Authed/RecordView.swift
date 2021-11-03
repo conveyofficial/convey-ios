@@ -14,7 +14,6 @@ struct RecordView : View {
     var recordButton : some View {
         Button(action: {
             viewModel.isRecording = true
-            viewModel.saveRecording = 0
         }) {
             Text("Record")
                 .font(.system(size: 25))
@@ -31,14 +30,14 @@ struct RecordView : View {
         HStack {
             //Save
             Button(action: {
-                viewModel.saveRecording = 3
+                viewModel.showPopup = false
             }) {
                 Text("Save")
             }.padding(30)
             
             //Delete
             Button(action: {
-                viewModel.saveRecording = 2
+                viewModel.showPopup = false
             }) {
                 Text("Delete")
             }.padding(30)
@@ -49,7 +48,7 @@ struct RecordView : View {
     var stopButton : some View {
         Button(action: {
             viewModel.isRecording = false
-            viewModel.saveRecording = 1
+            viewModel.showPopup = true
         }) {
             Text("Stop")
                 .font(.system(size: 25))
@@ -70,7 +69,7 @@ struct RecordView : View {
                     Text("Sign Out")
                     
                 })
-                if viewModel.saveRecording == 1 {
+                if viewModel.showPopup {
                     savePopup
                 }
                 else {
