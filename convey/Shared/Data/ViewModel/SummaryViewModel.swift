@@ -15,6 +15,12 @@ class SummaryViewModel : ObservableObject {
     init(firestoreService : FirestoreService, authService : AuthService) {
         self.firestoreService = firestoreService
         self.authService = authService
+        
+        setupListeners()
+    }
+    
+    func setupListeners() {
+        
     }
     
     func signOut() {
