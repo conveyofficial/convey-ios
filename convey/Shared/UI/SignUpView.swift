@@ -44,7 +44,7 @@ struct SignUpView : View {
     var signUpButton : some View {
         Button(action: {
             
-                viewModel.onSignUpTenantTap()
+                viewModel.onSignUpTap()
             
         }) {
             Text("SIGN UP")

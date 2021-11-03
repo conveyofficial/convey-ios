@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06F9C20939F2454E05111B41 /* Pods_convey__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */; };
+		4EB71E34273310A2000CEB92 /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB71E33273310A2000CEB92 /* FirestoreUser.swift */; };
+		4EB71E362733118F000CEB92 /* FirestoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB71E352733118F000CEB92 /* FirestoreRecord.swift */; };
 		A5914DB1018B5E86D0688A63 /* Pods_convey__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */; };
 		F82463032731CE9D008160E5 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463002731CE9A008160E5 /* LandingViewModel.swift */; };
 		F82463042731CE9D008160E5 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463012731CE9B008160E5 /* SignInViewModel.swift */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_convey__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C885DAE039CA2901F7B022D /* Pods-convey (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (macOS).release.xcconfig"; path = "Target Support Files/Pods-convey (macOS)/Pods-convey (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		4EB71E33273310A2000CEB92 /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = SOURCE_ROOT; };
+		4EB71E352733118F000CEB92 /* FirestoreRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRecord.swift; sourceTree = SOURCE_ROOT; };
 		83FB8B1D25594D984197D2DD /* Pods-convey (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).release.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		9FDDC1B7DE88F8F16BE7B03C /* Pods-convey (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (macOS).debug.xcconfig"; path = "Target Support Files/Pods-convey (macOS)/Pods-convey (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_convey__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,8 @@
 		F82462FF2731CE4C008160E5 /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
+				4EB71E33273310A2000CEB92 /* FirestoreUser.swift */,
+				4EB71E352733118F000CEB92 /* FirestoreRecord.swift */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -436,10 +442,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB71E362733118F000CEB92 /* FirestoreRecord.swift in Sources */,
 				F82463152731D08D008160E5 /* RecordViewModel.swift in Sources */,
 				F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */,
 				F824630F2731CFF1008160E5 /* TabCurve.swift in Sources */,
 				F85150352731CD9C0089C7C4 /* ViewModelModule.swift in Sources */,
+				4EB71E34273310A2000CEB92 /* FirestoreUser.swift in Sources */,
 				F824631B2731D4E0008160E5 /* CustomTextField.swift in Sources */,
 				F82463052731CE9D008160E5 /* SignUpViewModel.swift in Sources */,
 				F824630D2731CFE3008160E5 /* CustomTabBar.swift in Sources */,
@@ -591,7 +599,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NZD2D4P23;
+				DEVELOPMENT_TEAM = 5F9252RPU5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -614,7 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2NZD2D4P23;
+				DEVELOPMENT_TEAM = 5F9252RPU5;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

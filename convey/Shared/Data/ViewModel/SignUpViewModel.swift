@@ -38,22 +38,14 @@ class SignUpViewModel : ObservableObject {
     }
     
 
-    func onSignUpTenantTap() {
+    func onSignUpTap() {
         
-        authService.signUpTenant(email: email, password: password)
-        
-        signUpData.username = nil
-        signUpData.password = nil
-        
-    }
-    
-    func onSignUpOwnerTap() {
-        
-        authService.signUpOwner(email: email, password: password)
+        authService.signUp(email: email, password: password)
         
         signUpData.username = nil
         signUpData.password = nil
         
     }
+
     
 }

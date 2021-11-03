@@ -78,7 +78,7 @@ class AuthService {
         
     }
     
-    func signUpTenant(email : String, password : String) {
+    func signUp(email : String, password : String) {
         
         // creates user in firebase authentication
         auth.createUser(withEmail: email, password: password) { authResult, error in
@@ -92,7 +92,7 @@ class AuthService {
                 if self.userId != nil {
                     
                     // creates user in firebase firestore
-                    self.firestoreService.createUser(userId: self.userId!, userType: false)
+                    self.firestoreService.createUser(userId: self.userId!)
                     
                     print("Creating new user document in Firestore")
                 } else {
@@ -104,35 +104,11 @@ class AuthService {
                 
                 // no error, proceed
                 
-                // NEED TO UPDATE FIRESTORE DATABASE CONFIRMING THAT THE USER IS A TENANT
                 
             }
         }
         
         
-    }
-    
-    func signUpOwner(email : String, password : String) {
-        auth.createUser(withEmail: email, password: password) { authResult, error in
-            if error != nil {
-                
-                // alert user of error here
-                
-                return
-            } else {
-                
-                if self.userId != nil {
-                    self.firestoreService.createUser(userId: self.userId!, userType: true)
-                    
-                    print("Creating new user document in Firestore")
-                } else {
-                    fatalError("user id is null")
-                }
-                
-                // NEED TO UPDATE FIRESTORE DATABASE CONFIRMING THAT THE USER IS AN OWNER
-                
-            }
-        }
     }
     
     
