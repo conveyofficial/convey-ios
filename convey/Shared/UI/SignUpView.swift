@@ -15,16 +15,16 @@ struct SignUpView : View {
     var titleSection : some View {
         ZStack {
             
-            VStack {
-                HStack (spacing: 0) {
+            
+                
                     
-                    Text("Sign Up")
-                        .font(.system(size: 45))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
+                Text("Sign Up")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
                     
-                }
-            }
+                
+            
         }
     }
     
@@ -34,40 +34,25 @@ struct SignUpView : View {
                 .foregroundColor(.black)
             CustomTextField(image: "lock", placeHolder: "Password", txt: $viewModel.password, color : Color.white)
                 .foregroundColor(.black)
+            CustomTextField(image: "lock", placeHolder: "Re-Enter Password", txt: $viewModel.password, color : Color.white)
+                .foregroundColor(.black)
                 
         }
         .padding(.horizontal, 15)
     }
     
-    var signUpTenantButton : some View {
+    var signUpButton : some View {
         Button(action: {
             
                 viewModel.onSignUpTenantTap()
             
         }) {
-            Text("SIGN UP AS TENANT")
+            Text("SIGN UP")
                 .fontWeight(.bold)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
                 .padding(.vertical)
                 .frame(width: (UIScreen.main.bounds.width/2) - 15)
-                .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
-        }
-        .padding(.vertical)
-
-    }
-    
-    var signUpOwnerButton : some View {
-        Button(action: {
-            
-                viewModel.onSignUpOwnerTap()
-            
-        }) {
-            Text("SIGN UP AS OWNER")
-                .fontWeight(.bold)
-                .foregroundColor(Color.black)
-                .padding(.vertical)
-                .frame(width: (UIScreen.main.bounds.width/2) - 15)
-                .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
+                .background(Color.blue.clipShape(Capsule()).shadow(radius: 2))
         }
         .padding(.vertical)
 
@@ -87,13 +72,12 @@ struct SignUpView : View {
                     
                     signUpFields
                     
-                    signUpOwnerButton
-                    signUpTenantButton
+                    signUpButton
                         
                     Spacer()
                     
                 }
-                .background(LinearGradient(gradient: Gradient(colors : [.black, .red]), startPoint: .leading, endPoint: .trailing).ignoresSafeArea())
+                .background(Color.white.ignoresSafeArea())
         }
         .navigationViewStyle(StackNavigationViewStyle())
         

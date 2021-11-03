@@ -16,22 +16,16 @@ struct SignInView : View {
         ZStack {
             
             VStack {
-                HStack (spacing: 0) {
-                    Text("Mad")
-                        .font(.system(size: 45))
-                        .fontWeight(.bold)
-                        .foregroundColor(.red)
-                    Text("Rentals")
-                        .font(.system(size: 45))
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    
-                }
                 
-                Text("Spike Exercise")
-                    .font(.subheadline)
+                Text("Convey")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+                
+                Text("Your personal speech assistant.")
+                    .font(.headline)
                     .fontWeight(.semibold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
             
             }
         }
@@ -39,9 +33,9 @@ struct SignInView : View {
     
     var signInFields : some View {
         VStack {
-            CustomTextField(image: "person", placeHolder: "Username or Email Address", txt: $viewModel.email, color : Color.white)
+            CustomTextField(image: "person", placeHolder: "Username or Email Address", txt: $viewModel.email, color : Color.gray)
                 .foregroundColor(.black)
-            CustomTextField(image: "lock", placeHolder: "Password", txt: $viewModel.password, color : Color.white)
+            CustomTextField(image: "lock", placeHolder: "Password", txt: $viewModel.password, color : Color.gray)
                 .foregroundColor(.black)
                 
         }
@@ -68,10 +62,10 @@ struct SignInView : View {
         }) {
             Text("SIGN IN")
                 .fontWeight(.bold)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
                 .padding(.vertical)
                 .frame(width: (UIScreen.main.bounds.width/2) - 15)
-                .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
+                .background(Color.blue.clipShape(Capsule()).shadow(radius: 2))
         }
         .padding(.vertical, 30)
 
@@ -98,7 +92,7 @@ struct SignInView : View {
                     Spacer()
                     
                 }
-                .background(LinearGradient(gradient: Gradient(colors : [.black, .red]), startPoint: .leading, endPoint: .trailing).ignoresSafeArea())
+                .background(Color.white.ignoresSafeArea())
         }
         .navigationViewStyle(StackNavigationViewStyle())
         
