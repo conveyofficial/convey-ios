@@ -18,7 +18,6 @@ class ViewModelModule {
     private static var signinViewModel : SignInViewModel? = nil
     private static var recordViewModel : RecordViewModel? = nil
     private static var summaryViewModel : SummaryViewModel? = nil
-    private static var dashboardViewModel : DashboardViewModel? = nil
     
     static func passLandingViewModel() -> LandingViewModel {
         landingViewModel = landingViewModel ?? LandingViewModel(authService: AppModule.passAuthService(), firestoreService: AppModule.passFirestoreService())
@@ -44,12 +43,7 @@ class ViewModelModule {
         
         return recordViewModel!
     }
-    
-    static func passDashboardViewModel() -> DashboardViewModel {
-        dashboardViewModel = dashboardViewModel ?? DashboardViewModel(firestoreService: AppModule.passFirestoreService())
-        
-        return dashboardViewModel!
-    }
+
 
     
     

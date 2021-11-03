@@ -17,8 +17,17 @@ struct LandingView: View {
             
             // if the user is signed in, it will go to the tenant/owner flow
             if viewModel.isSignedIn {
- 
+                
+                
+                ZStack {
+                    
                     RecordView()
+                    
+                    CustomTabBar(selectedTab: $viewModel.selectedTab)
+                    
+                }
+ 
+                    
                            
             } else {
                 

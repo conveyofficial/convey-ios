@@ -15,9 +15,9 @@ struct CustomTabBar: View {
             
             // Tab Bar Buttons...
             
-            TabBarButton(image: "house", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "speaker.fill", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
-            TabBarButton(image: "bookmark", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "folder.fill", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
         }
         .padding()
@@ -47,14 +47,12 @@ struct CustomTabBar: View {
         }
         else{
             switch selectedTab {
-            case "house":
+            case "record":
                 return tabPoints[0]
-            case "bookmark":
+            case "summary":
                 return tabPoints[1]
-            case "message":
-                return tabPoints[2]
             default:
-                return tabPoints[3]
+                return tabPoints[2]
             }
         }
     }

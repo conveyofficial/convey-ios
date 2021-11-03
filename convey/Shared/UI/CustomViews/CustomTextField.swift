@@ -97,7 +97,7 @@ struct CustomTextField : View {
             
             
             switch placeHolder {
-            case "Password", "Re-Enter":
+            case "Password", "Re-Enter Password":
                 passwordText
                 
             case "Username or Email Address":
