@@ -12,7 +12,6 @@ import Combine
 class LandingViewModel : ObservableObject {
     
     @Published var isSignedIn = false
-    @Published var userIsOwner : Bool = false
     @Published var userNeedsAppApproval : Bool = true
     
     private var authService : AuthService
@@ -39,28 +38,6 @@ class LandingViewModel : ObservableObject {
                 print(status)         
                                 
             }).store(in: &cancellables)
-        
-        firestoreService.userPublisher
-            .sink(receiveValue: { user in
-                
-                if user != nil {
-                    
-                    self.userIsOwner = user!.is_owner!
-
-                } else {
-                    print("user is nil in landing view model")
-                }
-              
-                                
-            }).store(in: &cancellables)
    
-    }
-    
-  
-    
-    func signOut() {
-        authService.signOut()
-    }
-    
-    
+    }  
 }

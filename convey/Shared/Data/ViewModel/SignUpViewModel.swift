@@ -5,8 +5,6 @@
 //  Created by Galen Quinn on 10/3/21.
 //
 
-//import Foundation
-
 import SwiftUI
 
 class SignUpViewModel : ObservableObject {

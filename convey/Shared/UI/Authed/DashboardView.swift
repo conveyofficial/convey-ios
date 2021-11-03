@@ -7,17 +7,13 @@
 
 import SwiftUI
 
-struct RecordView : View {
+struct DashboardView : View {
     
-    @ObservedObject private var viewModel = ViewModelModule.passRecordViewModel()
+    @ObservedObject private var viewModel = ViewModelModule.passDashboardViewModel()
     
     var body: some View {
         
         ZStack {
-            
-            
-            
-            // This view just needs a convey
             
             
         }

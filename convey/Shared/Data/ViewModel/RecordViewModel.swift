@@ -6,17 +6,23 @@
 //
 
 import SwiftUI
+import Speech
 
 class RecordViewModel : ObservableObject {
-    
-    // data object we temporarily manipulate when on the sign in page
-//    @Published var signInData = AuthData()
-    
     
     private var firestoreService : FirestoreService
     
     init(firestoreService : FirestoreService) {
         self.firestoreService = firestoreService
+    }
+    
+    func onStartRecordingTap() {
+        
+    }
+    
+    
+    func onFinishRecordingtap() {
+        
     }
     
 }
