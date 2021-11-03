@@ -10,9 +10,15 @@ import SwiftUI
 class SummaryViewModel : ObservableObject {   
     
     private var firestoreService : FirestoreService
+    private var authService : AuthService
     
-    init(firestoreService : FirestoreService) {
+    init(firestoreService : FirestoreService, authService : AuthService) {
         self.firestoreService = firestoreService
+        self.authService = authService
+    }
+    
+    func signOut() {
+        authService.signOut()
     }
     
 }

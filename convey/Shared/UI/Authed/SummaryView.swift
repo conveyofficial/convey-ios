@@ -15,7 +15,15 @@ struct SummaryView : View {
         
         ZStack {
             
+            Button(action: {
+                viewModel.signOut()
+            }, label: {
+                Text("Sign Out")
+                
+            })
+            
         }
+        .background(Color.white.ignoresSafeArea())
         
     }
 }

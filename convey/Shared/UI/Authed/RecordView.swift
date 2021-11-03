@@ -15,12 +15,19 @@ struct RecordView : View {
         
         ZStack {
             
+            Button(action: {
+                viewModel.signOut()
+            }, label: {
+                Text("Sign Out")
+                
+            })
             
             
             // This view just needs a convey
             
             
         }
+        .background(Color.white.ignoresSafeArea())
         
     }
 }

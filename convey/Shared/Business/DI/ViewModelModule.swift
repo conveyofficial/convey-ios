@@ -33,13 +33,13 @@ class ViewModelModule {
     }
     
     static func passSummaryViewModel() -> SummaryViewModel {
-        summaryViewModel = summaryViewModel ?? SummaryViewModel(firestoreService: AppModule.passFirestoreService())
+        summaryViewModel = summaryViewModel ?? SummaryViewModel(firestoreService: AppModule.passFirestoreService(), authService: AppModule.passAuthService())
         
         return summaryViewModel!
     }
     
     static func passRecordViewModel() -> RecordViewModel {
-        recordViewModel = recordViewModel ?? RecordViewModel(firestoreService: AppModule.passFirestoreService())
+        recordViewModel = recordViewModel ?? RecordViewModel(firestoreService: AppModule.passFirestoreService(), authService: AppModule.passAuthService())
         
         return recordViewModel!
     }

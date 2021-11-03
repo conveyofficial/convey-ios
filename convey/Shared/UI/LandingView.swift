@@ -23,9 +23,15 @@ struct LandingView: View {
                 
                 ZStack {
                     
-                    RecordView()
+                    if viewModel.selectedTab == "record" {
+                        RecordView()
+                    } else {
+                        SummaryView()
+                    }
                     
-                    CustomTabBar(selectedTab: $viewModel.selectedTab)
+                   
+                    
+//                    CustomTabBar(selectedTab: $viewModel.selectedTab)
                     
                 }
  
@@ -36,7 +42,7 @@ struct LandingView: View {
                 SignInView()
                 
             }
-        }.background(Color.red.opacity(0.7).ignoresSafeArea())
+        }.background(Color.white.ignoresSafeArea())
         
     }
 }
