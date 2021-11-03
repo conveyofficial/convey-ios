@@ -15,9 +15,9 @@ struct CustomTabBar: View {
             
             // Tab Bar Buttons...
             
-            TabBarButton(image: "speaker.fill", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "speaker", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
-            TabBarButton(image: "folder.fill", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "folder", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
         }
         .padding()

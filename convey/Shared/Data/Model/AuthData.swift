@@ -9,4 +9,5 @@ struct AuthData : Codable {
     
     var username : String? = nil
     var password : String? = nil
+    var passwordReEntered : String? = nil
 }

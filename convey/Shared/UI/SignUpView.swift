@@ -34,7 +34,7 @@ struct SignUpView : View {
                 .foregroundColor(.black)
             CustomTextField(image: "lock", placeHolder: "Password", txt: $viewModel.password, color : Color.black)
                 .foregroundColor(.black)
-            CustomTextField(image: "lock", placeHolder: "Re-Enter Password", txt: $viewModel.password, color : Color.black)
+            CustomTextField(image: "lock", placeHolder: "Re-Enter Password", txt: $viewModel.passwordReEntered, color : Color.black)
                 .foregroundColor(.black)
                 
         }

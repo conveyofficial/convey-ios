@@ -11,6 +11,8 @@ struct LandingView: View {
     
     @ObservedObject private var viewModel = ViewModelModule.passLandingViewModel()
     
+
+    
     var body: some View {
         
         ZStack {

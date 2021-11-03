@@ -29,6 +29,15 @@ class SignUpViewModel : ObservableObject {
         }
     }
     
+    var passwordReEntered : String {
+        get {
+            signUpData.passwordReEntered ?? ""
+        }
+        set (value) {
+            signUpData.passwordReEntered = value
+        }
+    }
+    
     private var authService : AuthService
     
     init(authService : AuthService) {
