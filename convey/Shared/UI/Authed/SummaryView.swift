@@ -11,19 +11,47 @@ struct SummaryView : View {
     
     @ObservedObject private var viewModel = ViewModelModule.passSummaryViewModel()
     
-    var body: some View {
+    var titleSection : some View {
         
-        ZStack {
+        VStack {
             
-            Button(action: {
-                viewModel.signOut()
-            }, label: {
-                Text("Sign Out")
-                
-            })
+            Text("Recordings:")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
             
         }
-        .background(Color.white.ignoresSafeArea())
+    }
+    
+    var recordList : some View {
         
+        ScrollView {
+            VStack {
+                ForEach(viewModel.recordList, id: \.RecordId) { rec in
+                    Text("Record: " + rec.RecordName!)
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .padding(.vertical)
+            }
+            .listStyle(PlainListStyle())
+        }
+        }
+    }
+    
+    var body: some View {
+        
+        VStack {
+            
+            titleSection
+            
+            Spacer()
+            
+            recordList
+            
+            Spacer()
+            
+        }
+        .background(Color.red.opacity(0.7).ignoresSafeArea())
     }
 }
+

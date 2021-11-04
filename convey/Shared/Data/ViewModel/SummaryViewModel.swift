@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 
-class SummaryViewModel : ObservableObject {   
+class SummaryViewModel : ObservableObject {
+    
+    @Published var recordList : [FirestoreRecord] = []
+    
+    private var cancellables = Set<AnyCancellable>()
     
     private var firestoreService : FirestoreService
     private var authService : AuthService
@@ -20,7 +25,20 @@ class SummaryViewModel : ObservableObject {
     }
     
     func setupListeners() {
-        
+        firestoreService.userPublisher
+            .sink { user in
+                
+                if user != nil {
+
+                    if !user!.Records!.isEmpty {
+                        
+                        self.recordList = user!.Records!
+                        
+                    }
+                    
+                }
+                
+            }.store(in: &cancellables)
     }
     
     func signOut() {

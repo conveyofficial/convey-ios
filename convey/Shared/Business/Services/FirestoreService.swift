@@ -31,8 +31,6 @@ class FirestoreService {
     }
     
     
-    
-    
     func stop() {
         userID = ""
         userPublisher.send(nil)
