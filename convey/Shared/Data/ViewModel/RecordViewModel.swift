@@ -14,7 +14,7 @@ class RecordViewModel : ObservableObject {
     private var authService : AuthService
     
     @Published var isRecording = false
-    @Published var showPopup = false
+    @Published var promptAction = false
     
     init(firestoreService : FirestoreService, authService : AuthService) {
         self.firestoreService = firestoreService
@@ -28,10 +28,27 @@ class RecordViewModel : ObservableObject {
     
     func onStartRecordingTap() {
         
+        isRecording = true
+        
     }
     
     
-    func onFinishRecordingtap() {
+    func onStopRecordingtap() {
+        
+        isRecording = false
+        promptAction = true
+        
+    }
+    
+    
+    func saveRecord() {
+        promptAction = false
+        
+        
+    }
+    
+    func deleteRecord() {
+        promptAction = false
         
     }
     

@@ -25,6 +25,8 @@ class SummaryViewModel : ObservableObject {
     }
     
     func setupListeners() {
+        
+        
         firestoreService.userPublisher
             .sink { user in
                 

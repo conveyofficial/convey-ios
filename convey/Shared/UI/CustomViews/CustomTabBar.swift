@@ -15,20 +15,25 @@ struct CustomTabBar: View {
             
             // Tab Bar Buttons...
             
-            TabBarButton(image: "speaker", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "person", selectedTab: $selectedTab, tabPoints: $tabPoints)
             
-            TabBarButton(image: "folder", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            TabBarButton(image: "house", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            
+//            TabBarButton(image: "gear", selectedTab: $selectedTab, tabPoints: $tabPoints)
+//
+//            TabBarButton(image: "questionmark", selectedTab: $selectedTab, tabPoints: $tabPoints)
+            
             
         }
         .padding()
         .background(
-            Color.white
+            Color.blue
                 .clipShape(TabCurve(tabPoint: getCurvePoint() - 15))
         )
         .overlay(
         
             Circle()
-                .fill(Color.white)
+                .fill(Color.blue)
                 .frame(width: 10, height: 10)
                 .offset(x: getCurvePoint() - 20)
             
@@ -47,12 +52,10 @@ struct CustomTabBar: View {
         }
         else{
             switch selectedTab {
-            case "record":
-                return tabPoints[0]
-            case "summary":
+            case "person":
                 return tabPoints[1]
             default:
-                return tabPoints[2]
+                return tabPoints[0]
             }
         }
     }
@@ -67,7 +70,7 @@ struct TabBarButton: View {
     var body: some View{
         
         // For getting mid Point of each button for curve Animation....
-        GeometryReader{reader -> AnyView in
+        GeometryReader { reader -> AnyView in
             
             // extracting MidPoint and Storing....
             let midX = reader.frame(in: .global).midX
@@ -75,7 +78,7 @@ struct TabBarButton: View {
             DispatchQueue.main.async {
                 
                 // avoiding junk data....
-                if tabPoints.count <= 4{
+                if tabPoints.count <= 4 {
                     tabPoints.append(midX)
                 }
             }
@@ -94,7 +97,7 @@ struct TabBarButton: View {
                     
                     Image(systemName: "\(image)\(selectedTab == image ? ".fill" : "")")
                         .font(.system(size: 25, weight: .semibold))
-                        .foregroundColor(Color("TabSelected"))
+                        .foregroundColor(Color.white)
                     // Lifting View...
                     // if its selected...
                         .offset(y: selectedTab == image ? -10 : 0)

@@ -11,83 +11,145 @@ struct RecordView : View {
     
     @ObservedObject private var viewModel = ViewModelModule.passRecordViewModel()
     
+    
+    var titleSection : some View {
+        Text("Welcome to Convey")
+            .font(.largeTitle)
+            .fontWeight(.semibold)
+            .foregroundColor(.black)
+    }
+    
     var recordButton : some View {
         Button(action: {
-            viewModel.isRecording = true
+            viewModel.onStartRecordingTap()
         }) {
             Text("Record")
-                .font(.system(size: 25))
-        }.foregroundColor(Color.black)
-        .padding(30)
-        .background(
-            Circle()
-            .fill(Color.red)
-        )
+                .lineLimit(1)
+                .font(.title)
+                .foregroundColor(Color.black)
+                .padding(30)
+        }
+        .background(Color.green.clipShape(Circle()))
         
     }
     
-    var savePopup : some View {
+    var actionPopup : some View {
         HStack {
+            
+            Spacer()
             //Save
+            
             Button(action: {
-                viewModel.showPopup = false
+                //                viewModel.showPopup = false
+                viewModel.saveRecord()
             }) {
                 Text("Save")
-            }.padding(30)
+                    .lineLimit(1)
+                    .font(.title)
+                    .foregroundColor(Color.black)
+                    .padding(30)
+            }
+            .background(Color.green.clipShape(Circle()))
+            
+            //            .padding(30)
+            
+            Spacer()
             
             //Delete
             Button(action: {
-                viewModel.showPopup = false
+                //                viewModel.showPopup = false
+                viewModel.deleteRecord()
             }) {
                 Text("Delete")
-            }.padding(30)
+                    .lineLimit(1)
+                    .font(.title)
+                    .foregroundColor(Color.black)
+                    .padding(30)
+                
+            }
+            .background(Color.red)
+            
+            
+            
+            Spacer()
         }
     }
     
     
     var stopButton : some View {
         Button(action: {
-            viewModel.isRecording = false
-            viewModel.showPopup = true
+            viewModel.onStopRecordingtap()
         }) {
             Text("Stop")
-                .font(.system(size: 25))
-        }.foregroundColor(Color.black)
-        .padding(30)
+                .lineLimit(1)
+                .font(.title)
+                .foregroundColor(Color.black)
+                .padding(30)
+        }
         .background(Color.red)
     }
     
     
+    var signOutDebug : some View {
+        Button(action: {
+            viewModel.signOut()
+        }, label: {
+            Text("Sign Out")
+            
+        })
+    }
+    
+    
+    
+    
     var body: some View {
         
-        ZStack {
+        
+            
+            
+            
             
             VStack {
-                Button(action: {
-                    viewModel.signOut()
-                }, label: {
-                    Text("Sign Out")
+                
+                signOutDebug
+                
+                Spacer()
+                
+                titleSection
+                
+                Spacer()
+                
+                
+                if viewModel.promptAction {
                     
-                })
-                if viewModel.showPopup {
-                    savePopup
-                }
-                else {
+                    actionPopup
+                    
+                } else {
+                    
+                    
                     if viewModel.isRecording {
+                        
                         stopButton
+                        
                     } else {
+                        
                         recordButton
+                        
                     }
+                    
+                    
                 }
+                
+                Spacer()
+                
+                Spacer()
                 
                 
                 // This view just needs a convey
-            
+                
             }
             
-            
-        }
-        .background(Color.white.ignoresSafeArea())
+    
         
     }
 }

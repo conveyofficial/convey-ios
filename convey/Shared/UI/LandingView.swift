@@ -10,7 +10,6 @@ import SwiftUI
 struct LandingView: View {
     
     @ObservedObject private var viewModel = ViewModelModule.passLandingViewModel()
-    
 
     
     var body: some View {
@@ -21,9 +20,15 @@ struct LandingView: View {
             if viewModel.isSignedIn {
                 
                 
-                ZStack {
+                ZStack(alignment: .bottom, content: {
                     
-                    if viewModel.selectedTab == "record" {
+                    
+                    
+                    
+                    Color.blue.opacity(0.3)
+                        .ignoresSafeArea()
+                    
+                    if viewModel.selectedTab == "house" {
                         RecordView()
                     } else {
                         SummaryView()
@@ -31,9 +36,15 @@ struct LandingView: View {
                     
                    
                     
+                    
+                    
+                    // Custom Tab Bar....
+                    
+                    CustomTabBar(selectedTab: $viewModel.selectedTab)
+                })
 //                    CustomTabBar(selectedTab: $viewModel.selectedTab)
                     
-                }
+                
  
                     
                            

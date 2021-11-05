@@ -12,7 +12,8 @@ import Combine
 class LandingViewModel : ObservableObject {
     
     @Published var isSignedIn = false
-    @Published var selectedTab = "record"
+    @Published var selectedTab = "house"
+    
     
     private var authService : AuthService
     private var firestoreService : FirestoreService

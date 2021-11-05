@@ -15,10 +15,10 @@ struct SummaryView : View {
         
         VStack {
             
-            Text("Recordings:")
+            Text("Recordings")
                 .font(.title2)
                 .fontWeight(.semibold)
-                .foregroundColor(.white)
+                .foregroundColor(.black)
             
         }
     }
@@ -42,6 +42,8 @@ struct SummaryView : View {
         
         VStack {
             
+            Spacer()
+            
             titleSection
             
             Spacer()
@@ -51,7 +53,8 @@ struct SummaryView : View {
             Spacer()
             
         }
-        .background(Color.red.opacity(0.7).ignoresSafeArea())
+//        .frame(width: UIScreen.main.bounds.width)
+//        .background(Color.red.opacity(0.7).ignoresSafeArea())
     }
 }
 
