@@ -39,6 +39,8 @@
 		F85150352731CD9C0089C7C4 /* ViewModelModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150332731CD9C0089C7C4 /* ViewModelModule.swift */; };
 		F85150382731CDAC0089C7C4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150362731CDAB0089C7C4 /* AuthService.swift */; };
 		F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150372731CDAC0089C7C4 /* FirestoreService.swift */; };
+		F8A11B3E2744B88F001D1326 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A11B3D2744B88F001D1326 /* CodableUtils.swift */; };
+		F8A11B402744B9A2001D1326 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A11B3F2744B9A2001D1326 /* StringUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		F85150332731CD9C0089C7C4 /* ViewModelModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelModule.swift; sourceTree = "<group>"; };
 		F85150362731CDAB0089C7C4 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F85150372731CDAC0089C7C4 /* FirestoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		F8A11B3D2744B88F001D1326 /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
+		F8A11B3F2744B9A2001D1326 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		FBAF9982C5B95020FB5A1B38 /* Pods-convey (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).debug.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				F824631C2731D50F008160E5 /* ViewUtils.swift */,
+				F8A11B3D2744B88F001D1326 /* CodableUtils.swift */,
+				F8A11B3F2744B9A2001D1326 /* StringUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A11B3E2744B88F001D1326 /* CodableUtils.swift in Sources */,
 				4EB71E362733118F000CEB92 /* FirestoreRecord.swift in Sources */,
 				F82463152731D08D008160E5 /* RecordViewModel.swift in Sources */,
 				F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */,
@@ -458,6 +465,7 @@
 				F82463132731D02D008160E5 /* SummaryView.swift in Sources */,
 				F82463032731CE9D008160E5 /* LandingViewModel.swift in Sources */,
 				F82463192731D488008160E5 /* AuthData.swift in Sources */,
+				F8A11B402744B9A2001D1326 /* StringUtils.swift in Sources */,
 				F85150282731C3410089C7C4 /* AppDelegate.swift in Sources */,
 				F82463082731CEB2008160E5 /* SignUpView.swift in Sources */,
 				F82463092731CEB2008160E5 /* SignInView.swift in Sources */,

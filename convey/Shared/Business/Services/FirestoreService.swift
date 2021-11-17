@@ -25,8 +25,6 @@ class FirestoreService {
         self.userID = userID
         startUserListener()
         
-        // so first thing we do, is we grab all information about Users
-        
         
     }
     
@@ -79,4 +77,47 @@ class FirestoreService {
                     }
                 }
         }
+    
+    func uploadRecordToUser(text : String, time : Double) {
+        
+//        var wpm = text.numberOfWords / (Int(time)/60)
+        
+        // RecordName should be differnet here
+        
+        var newRecord = FirestoreRecord(
+            RecordId: UUID().uuidString,
+            RecordName: "Test Record",
+            ParsedText: text,
+            Time: time,
+            WordCount: text.numberOfWords,
+            Wpm: nil,
+            HighestFreqWords: nil,
+            SpecialWordsUniversal: nil,
+            SpecialWordsPersonal: nil,
+            FillerWordCount: nil,
+            HighestFillerWords: nil,
+            FillerWordsPace: nil,
+            WordsPerFillerWords: nil)
+        
+        
+        try? db.collection("users").document(userID)
+            .updateData([
+                "Records" : FieldValue.arrayUnion([newRecord.asDictionary()])
+            ]) { [weak self] err in
+                guard let self = self else { return }
+                if let err = err {
+                    
+                    print("err adding transcription \(err)")
+                    //self.yourErrorAlert()
+                }
+                else {
+                    
+                    print("saved ok")
+                  
+                }
+            }
+        
+    }
+    
+    
 }

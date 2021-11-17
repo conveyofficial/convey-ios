@@ -16,7 +16,7 @@ struct SummaryView : View {
         VStack {
             
             Text("Recordings")
-                .font(.title2)
+                .font(.largeTitle)
                 .fontWeight(.semibold)
                 .foregroundColor(.black)
             
@@ -28,10 +28,18 @@ struct SummaryView : View {
         ScrollView {
             VStack {
                 ForEach(viewModel.recordList, id: \.RecordId) { rec in
+                    
                     Text("Record: " + rec.RecordName!)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding(.top)
+                        .foregroundColor(.blue)
+                    
+                    Text("Debug Text: " + rec.ParsedText!)
                         .font(.headline)
                         .fontWeight(.semibold)
-                        .padding(.vertical)
+                        .foregroundColor(.black)
+                        .padding(.horizontal)
             }
             .listStyle(PlainListStyle())
         }

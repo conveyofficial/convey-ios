@@ -9,9 +9,9 @@ struct FirestoreRecord : Codable {
     var RecordId : String? = nil
     var RecordName : String? = nil
     var ParsedText : String? = nil
-    var Time : Float? = nil
+    var Time : Double? = nil
     var WordCount : Int? = nil
-    var Wpm : Float? = nil
+    var Wpm : Int? = nil
     var HighestFreqWords: [String : Int]? = nil  //(key: filler words, val: count)
     var SpecialWordsUniversal: [String]? = nil
     var SpecialWordsPersonal: [String]? = nil

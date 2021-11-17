@@ -13,10 +13,23 @@ struct RecordView : View {
     
     
     var titleSection : some View {
-        Text("Welcome to Convey")
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-            .foregroundColor(.black)
+        
+        VStack {
+            
+            Text("Convey")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+                .padding()
+            
+            Text("Your personal speech assistant")
+                .font(.title3)
+                .fontWeight(.semibold)
+                .foregroundColor(.blue)
+                
+            
+        }
+        
     }
     
     var recordButton : some View {
@@ -27,9 +40,9 @@ struct RecordView : View {
                 .lineLimit(1)
                 .font(.title)
                 .foregroundColor(Color.black)
-                .padding(30)
+                .padding()
         }
-        .background(Color.green.clipShape(Circle()))
+        .background(Color.blue.clipShape(Capsule()).shadow(radius: 2))
         
     }
     
@@ -37,37 +50,32 @@ struct RecordView : View {
         HStack {
             
             Spacer()
-            //Save
             
             Button(action: {
-                //                viewModel.showPopup = false
                 viewModel.saveRecord()
             }) {
                 Text("Save")
                     .lineLimit(1)
                     .font(.title)
                     .foregroundColor(Color.black)
-                    .padding(30)
+                    .padding()
             }
-            .background(Color.green.clipShape(Circle()))
-            
-            //            .padding(30)
+            .background(Color.green.clipShape(Capsule()).shadow(radius: 2))
             
             Spacer()
             
-            //Delete
             Button(action: {
-                //                viewModel.showPopup = false
+            
                 viewModel.deleteRecord()
             }) {
                 Text("Delete")
                     .lineLimit(1)
                     .font(.title)
                     .foregroundColor(Color.black)
-                    .padding(30)
+                    .padding()
                 
             }
-            .background(Color.red)
+            .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
             
             
             
@@ -78,15 +86,15 @@ struct RecordView : View {
     
     var stopButton : some View {
         Button(action: {
-            viewModel.onStopRecordingtap()
+            viewModel.onStopRecordingTap()
         }) {
             Text("Stop")
                 .lineLimit(1)
                 .font(.title)
                 .foregroundColor(Color.black)
-                .padding(30)
+                .padding()
         }
-        .background(Color.red)
+        .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
     }
     
     
@@ -103,19 +111,14 @@ struct RecordView : View {
     
     
     var body: some View {
-        
-        
-            
-            
-            
             
             VStack {
                 
                 signOutDebug
                 
-                Spacer()
-                
                 titleSection
+                
+                Spacer()
                 
                 Spacer()
                 
@@ -140,12 +143,9 @@ struct RecordView : View {
                     
                 }
                 
-                Spacer()
                 
                 Spacer()
                 
-                
-                // This view just needs a convey
                 
             }
             
