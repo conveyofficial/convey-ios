@@ -191,7 +191,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
                 
                 print(result.bestTranscription.formattedString)
                 
-                self.firestoreService.uploadRecordToUser(text: result.bestTranscription.formattedString, time: self.time)
+                self.firestoreService.uploadRecordToUser(text: result.bestTranscription.formattedString, time: self.time, recordName: self.recordName)
                 
                 self.time = 0
                 

@@ -34,6 +34,7 @@ struct RecordView : View {
     
     var recordButton : some View {
         Button(action: {
+            viewModel.recordName=""
             viewModel.onStartRecordingTap()
         }) {
             Text("Record")
@@ -52,7 +53,6 @@ struct RecordView : View {
             
 
             TextField("Enter record name here: ", text: $viewModel.recordName)
-//                .multilineTextAlignment(.center)
                 .frame(width: UIScreen.main.bounds.size.width - 100)
                 .foregroundColor(Color.black)
                 .padding(10)

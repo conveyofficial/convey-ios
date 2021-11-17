@@ -78,7 +78,7 @@ class FirestoreService {
                 }
         }
     
-    func uploadRecordToUser(text : String, time : Double) {
+    func uploadRecordToUser(text : String, time : Double, recordName : String) {
         
 //        var wpm = text.numberOfWords / (Int(time)/60)
         
@@ -86,7 +86,7 @@ class FirestoreService {
         
         var newRecord = FirestoreRecord(
             RecordId: UUID().uuidString,
-            RecordName: "Test Record",
+            RecordName: recordName,
             ParsedText: text,
             Time: time,
             WordCount: text.numberOfWords,
