@@ -18,6 +18,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     
     @Published var isRecording = false
     @Published var promptAction = false
+    @Published var recordName : String = ""
     
     private var recordingSession: AVAudioSession!
     private var audioRecorder: AVAudioRecorder!

@@ -7,6 +7,28 @@
 
 import SwiftUI
 
+
+struct SummaryCardView : View {
+    var rec : FirestoreRecord
+    
+    var body : some View {
+        VStack {
+            Text("Record: " + rec.RecordName!)
+                .font(.title3)
+                .fontWeight(.bold)
+                .padding(.top)
+                .foregroundColor(.blue)
+            
+            Text("Debug Text: " + rec.ParsedText!)
+                .font(.headline)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+                .padding(.horizontal)
+
+        }
+    }
+}
+
 struct SummaryView : View {
     
     @ObservedObject private var viewModel = ViewModelModule.passSummaryViewModel()
@@ -22,25 +44,17 @@ struct SummaryView : View {
             
         }
     }
+
+    
+    
     
     var recordList : some View {
         
         ScrollView {
             VStack {
                 ForEach(viewModel.recordList, id: \.RecordId) { rec in
-                    
-                    Text("Record: " + rec.RecordName!)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .padding(.top)
-                        .foregroundColor(.blue)
-                    
-                    Text("Debug Text: " + rec.ParsedText!)
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.black)
-                        .padding(.horizontal)
-            }
+                    SummaryCardView(rec: rec)
+                                }
             .listStyle(PlainListStyle())
         }
         }

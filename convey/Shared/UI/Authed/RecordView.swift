@@ -46,41 +46,61 @@ struct RecordView : View {
         
     }
     
+    
     var actionPopup : some View {
-        HStack {
+        VStack {
             
-            Spacer()
+
+            TextField("Enter record name here: ", text: $viewModel.recordName)
+//                .multilineTextAlignment(.center)
+                .frame(width: UIScreen.main.bounds.size.width - 100)
+                .foregroundColor(Color.black)
+                .padding(10)
+                .background(Color.white.clipShape(RoundedRectangle(cornerRadius: 5)))
+                .padding(30)
             
-            Button(action: {
-                viewModel.saveRecord()
-            }) {
-                Text("Save")
-                    .lineLimit(1)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .padding()
-            }
-            .background(Color.green.clipShape(Capsule()).shadow(radius: 2))
             
-            Spacer()
+
             
-            Button(action: {
-            
-                viewModel.deleteRecord()
-            }) {
-                Text("Delete")
-                    .lineLimit(1)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .padding()
                 
+            
+            
+            HStack {
+                
+                Spacer()
+                
+                Button(action: {
+                    viewModel.saveRecord()
+                }) {
+                    Text("Save")
+                        .lineLimit(1)
+                        .font(.title)
+                        .foregroundColor(Color.black)
+                        .padding()
+                }
+                .background(Color.green.clipShape(Capsule()).shadow(radius: 2))
+                
+                Spacer()
+                
+                Button(action: {
+                
+                    viewModel.deleteRecord()
+                }) {
+                    Text("Delete")
+                        .lineLimit(1)
+                        .font(.title)
+                        .foregroundColor(Color.black)
+                        .padding()
+                    
+                }
+                .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
+                
+                
+                
+                Spacer()
             }
-            .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
-            
-            
-            
-            Spacer()
         }
+       
     }
     
     
