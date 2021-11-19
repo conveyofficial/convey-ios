@@ -11,6 +11,35 @@ struct RecordView : View {
     
     @ObservedObject private var viewModel = ViewModelModule.passRecordViewModel()
     
+    @State var hours: Int = 0
+    @State var minutes: Int = 0
+    @State var seconds: Int = 0
+    
+    @State var timer: Timer? = nil
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in
+            if self.seconds == 59 {
+                self.seconds = 0
+                if self.minutes == 59 {
+                    self.minutes = 0
+                    self.hours = self.hours + 1
+                }
+                else {
+                    self.minutes = self.minutes + 1
+                }
+            }
+            else {
+                self.seconds = self.seconds + 1
+            }
+        }
+    }
+    
+    func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
     
     var titleSection : some View {
         
@@ -34,6 +63,7 @@ struct RecordView : View {
     
     var recordButton : some View {
         Button(action: {
+            self.startTimer()
             viewModel.recordName=""
             viewModel.onStartRecordingTap()
         }) {
@@ -105,16 +135,22 @@ struct RecordView : View {
     
     
     var stopButton : some View {
-        Button(action: {
-            viewModel.onStopRecordingTap()
-        }) {
-            Text("Stop")
-                .lineLimit(1)
-                .font(.title)
-                .foregroundColor(Color.black)
-                .padding()
+        VStack {
+            Text("\(minutes):\(seconds)").foregroundColor(.black)
+            
+            Button(action: {
+                self.stopTimer()
+                viewModel.onStopRecordingTap()
+                viewModel.time = (Double(seconds) + (60.0 * Double(minutes)))
+            }) {
+                Text("Stop")
+                    .lineLimit(1)
+                    .font(.title)
+                    .foregroundColor(Color.black)
+                    .padding()
+            }
+            .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
         }
-        .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
     }
     
     

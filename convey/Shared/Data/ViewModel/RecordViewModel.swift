@@ -23,7 +23,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     private var recordingSession: AVAudioSession!
     private var audioRecorder: AVAudioRecorder!
     
-    private var time = 0.0
+    @Published var time = 0.0
     
    
     

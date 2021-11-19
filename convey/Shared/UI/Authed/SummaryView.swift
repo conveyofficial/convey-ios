@@ -19,6 +19,12 @@ struct SummaryCardView : View {
                 .padding(.top)
                 .foregroundColor(.blue)
             
+            Text("Time: " + "\(String(describing:rec.Time!)) seconds")
+                .font(.headline)
+                .fontWeight(.bold)
+                .padding(.top)
+                .foregroundColor(.blue)
+            
             Text("Debug Text: " + rec.ParsedText!)
                 .font(.headline)
                 .fontWeight(.semibold)
