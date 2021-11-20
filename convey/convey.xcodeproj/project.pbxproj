@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		06F9C20939F2454E05111B41 /* Pods_convey__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */; };
+		2F057CC647767FB73DDD6FE9 /* Pods_conveyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CC18A1A82B8116D120A7C2 /* Pods_conveyTests.framework */; };
+		4EB31C84274877E900F6EF42 /* conveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB31C83274877E900F6EF42 /* conveyTests.swift */; };
+		4EB31C8A274878CF00F6EF42 /* RecordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB31C7B2748766200F6EF42 /* RecordViewModelTest.swift */; };
+		4EB31C8D27487D0F00F6EF42 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463142731D08D008160E5 /* RecordViewModel.swift */; };
 		4EB71E34273310A2000CEB92 /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB71E33273310A2000CEB92 /* FirestoreUser.swift */; };
 		4EB71E362733118F000CEB92 /* FirestoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB71E352733118F000CEB92 /* FirestoreRecord.swift */; };
 		A5914DB1018B5E86D0688A63 /* Pods_convey__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */; };
@@ -19,7 +23,6 @@
 		F824630D2731CFE3008160E5 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824630C2731CFE3008160E5 /* CustomTabBar.swift */; };
 		F824630F2731CFF1008160E5 /* TabCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824630E2731CFF1008160E5 /* TabCurve.swift */; };
 		F82463132731D02D008160E5 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463122731D02D008160E5 /* SummaryView.swift */; };
-		F82463152731D08D008160E5 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463142731D08D008160E5 /* RecordViewModel.swift */; };
 		F82463172731D204008160E5 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463162731D204008160E5 /* SummaryViewModel.swift */; };
 		F82463192731D488008160E5 /* AuthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463182731D488008160E5 /* AuthData.swift */; };
 		F824631B2731D4E0008160E5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824631A2731D4E0008160E5 /* CustomTextField.swift */; };
@@ -43,14 +46,30 @@
 		F8A11B402744B9A2001D1326 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A11B3F2744B9A2001D1326 /* StringUtils.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4EB31C85274877E900F6EF42 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F85150012730D9780089C7C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F851500C2730D97E0089C7C4;
+			remoteInfo = "convey (iOS)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_convey__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C885DAE039CA2901F7B022D /* Pods-convey (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (macOS).release.xcconfig"; path = "Target Support Files/Pods-convey (macOS)/Pods-convey (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		4EB31C7B2748766200F6EF42 /* RecordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModelTest.swift; sourceTree = "<group>"; };
+		4EB31C81274877E900F6EF42 /* conveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = conveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EB31C83274877E900F6EF42 /* conveyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conveyTests.swift; sourceTree = "<group>"; };
 		4EB71E33273310A2000CEB92 /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = SOURCE_ROOT; };
 		4EB71E352733118F000CEB92 /* FirestoreRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRecord.swift; sourceTree = SOURCE_ROOT; };
+		65CC18A1A82B8116D120A7C2 /* Pods_conveyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_conveyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76752030131F488D8FE52230 /* Pods-conveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-conveyTests.release.xcconfig"; path = "Target Support Files/Pods-conveyTests/Pods-conveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		83FB8B1D25594D984197D2DD /* Pods-convey (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).release.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		9FDDC1B7DE88F8F16BE7B03C /* Pods-convey (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (macOS).debug.xcconfig"; path = "Target Support Files/Pods-convey (macOS)/Pods-convey (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 		AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_convey__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1D85D355C2AF8EA955F5B5 /* Pods-conveyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-conveyTests.debug.xcconfig"; path = "Target Support Files/Pods-conveyTests/Pods-conveyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F82463002731CE9A008160E5 /* LandingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		F82463012731CE9B008160E5 /* SignInViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F82463022731CE9D008160E5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -86,6 +105,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4EB31C7E274877E900F6EF42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F057CC647767FB73DDD6FE9 /* Pods_conveyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F851500A2730D97E0089C7C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -110,8 +137,17 @@
 			children = (
 				AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */,
 				3990D5280F6BA087E7F4F796 /* Pods_convey__macOS_.framework */,
+				65CC18A1A82B8116D120A7C2 /* Pods_conveyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EB31C82274877E900F6EF42 /* conveyTests */ = {
+			isa = PBXGroup;
+			children = (
+				4EB31C83274877E900F6EF42 /* conveyTests.swift */,
+			);
+			path = conveyTests;
 			sourceTree = "<group>";
 		};
 		637A8BCD50FF64013A90D3D4 /* Pods */ = {
@@ -121,6 +157,8 @@
 				83FB8B1D25594D984197D2DD /* Pods-convey (iOS).release.xcconfig */,
 				9FDDC1B7DE88F8F16BE7B03C /* Pods-convey (macOS).debug.xcconfig */,
 				3C885DAE039CA2901F7B022D /* Pods-convey (macOS).release.xcconfig */,
+				ED1D85D355C2AF8EA955F5B5 /* Pods-conveyTests.debug.xcconfig */,
+				76752030131F488D8FE52230 /* Pods-conveyTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -133,6 +171,7 @@
 				F82463022731CE9D008160E5 /* SignUpViewModel.swift */,
 				F82463142731D08D008160E5 /* RecordViewModel.swift */,
 				F82463162731D204008160E5 /* SummaryViewModel.swift */,
+				4EB31C7B2748766200F6EF42 /* RecordViewModelTest.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -171,6 +210,7 @@
 				F85150052730D9790089C7C4 /* Shared */,
 				F851500F2730D97E0089C7C4 /* iOS */,
 				F85150162730D97E0089C7C4 /* macOS */,
+				4EB31C82274877E900F6EF42 /* conveyTests */,
 				F851500E2730D97E0089C7C4 /* Products */,
 				637A8BCD50FF64013A90D3D4 /* Pods */,
 				389B7C9A3597291B79255342 /* Frameworks */,
@@ -196,6 +236,7 @@
 			children = (
 				F851500D2730D97E0089C7C4 /* convey.app */,
 				F85150152730D97E0089C7C4 /* convey.app */,
+				4EB31C81274877E900F6EF42 /* conveyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,6 +330,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4EB31C80274877E900F6EF42 /* conveyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EB31C87274877E900F6EF42 /* Build configuration list for PBXNativeTarget "conveyTests" */;
+			buildPhases = (
+				ED28FA68EE391E3F3157F612 /* [CP] Check Pods Manifest.lock */,
+				4EB31C7D274877E900F6EF42 /* Sources */,
+				4EB31C7E274877E900F6EF42 /* Frameworks */,
+				4EB31C7F274877E900F6EF42 /* Resources */,
+				528CD367E2BD48CB1832FEF2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EB31C86274877E900F6EF42 /* PBXTargetDependency */,
+			);
+			name = conveyTests;
+			productName = conveyTests;
+			productReference = 4EB31C81274877E900F6EF42 /* conveyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F851500C2730D97E0089C7C4 /* convey (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F85150212730D97E0089C7C4 /* Build configuration list for PBXNativeTarget "convey (iOS)" */;
@@ -332,9 +393,13 @@
 		F85150012730D9780089C7C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					4EB31C80274877E900F6EF42 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = F851500C2730D97E0089C7C4;
+					};
 					F851500C2730D97E0089C7C4 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -358,11 +423,19 @@
 			targets = (
 				F851500C2730D97E0089C7C4 /* convey (iOS) */,
 				F85150142730D97E0089C7C4 /* convey (macOS) */,
+				4EB31C80274877E900F6EF42 /* conveyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4EB31C7F274877E900F6EF42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F851500B2730D97E0089C7C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +473,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-convey (iOS)/Pods-convey (iOS)-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		528CD367E2BD48CB1832FEF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-conveyTests/Pods-conveyTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-conveyTests/Pods-conveyTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-conveyTests/Pods-conveyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8B6ADA49D710DB1A4F2DC97C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,6 +506,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-convey (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED28FA68EE391E3F3157F612 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-conveyTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -447,13 +559,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4EB31C7D274877E900F6EF42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EB31C84274877E900F6EF42 /* conveyTests.swift in Sources */,
+				4EB31C8A274878CF00F6EF42 /* RecordViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F85150092730D97E0089C7C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F8A11B3E2744B88F001D1326 /* CodableUtils.swift in Sources */,
 				4EB71E362733118F000CEB92 /* FirestoreRecord.swift in Sources */,
-				F82463152731D08D008160E5 /* RecordViewModel.swift in Sources */,
 				F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */,
 				F824630F2731CFF1008160E5 /* TabCurve.swift in Sources */,
 				F824631F27330F15008160E5 /* RecordView.swift in Sources */,
@@ -473,6 +593,7 @@
 				F824631D2731D50F008160E5 /* ViewUtils.swift in Sources */,
 				F85150342731CD9C0089C7C4 /* AppModule.swift in Sources */,
 				F82463042731CE9D008160E5 /* SignInViewModel.swift in Sources */,
+				4EB31C8D27487D0F00F6EF42 /* RecordViewModel.swift in Sources */,
 				F85150382731CDAC0089C7C4 /* AuthService.swift in Sources */,
 				F851501B2730D97E0089C7C4 /* LandingView.swift in Sources */,
 				F824632327330FDB008160E5 /* AlertService.swift in Sources */,
@@ -492,7 +613,70 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4EB31C86274877E900F6EF42 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F851500C2730D97E0089C7C4 /* convey (iOS) */;
+			targetProxy = 4EB31C85274877E900F6EF42 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		4EB31C88274877E900F6EF42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED1D85D355C2AF8EA955F5B5 /* Pods-conveyTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5F9252RPU5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Grant-Jensen.conveyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/convey.app/convey";
+			};
+			name = Debug;
+		};
+		4EB31C89274877E900F6EF42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76752030131F488D8FE52230 /* Pods-conveyTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5F9252RPU5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Grant-Jensen.conveyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/convey.app/convey";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		F851501F2730D97E0089C7C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -704,6 +888,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4EB31C87274877E900F6EF42 /* Build configuration list for PBXNativeTarget "conveyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EB31C88274877E900F6EF42 /* Debug */,
+				4EB31C89274877E900F6EF42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F85150042730D9780089C7C4 /* Build configuration list for PBXProject "convey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -24,7 +24,6 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     private var audioRecorder: AVAudioRecorder!
     
     @Published var time = 0.0
-    
    
     
     init(firestoreService : FirestoreService, authService : AuthService) {
