@@ -35,7 +35,8 @@ class AuthService {
         }
     }
     
-    private var authListener : AuthStateDidChangeListenerHandle? = nil
+    private var authListener : AuthStateDidChangeListenerBlock? = nil
+    private var handle : AuthStateDidChangeListenerHandle? = nil
     
     private var firestoreService : FirestoreService
     
@@ -72,7 +73,7 @@ class AuthService {
         
 //        stopListening()
         
-        firestoreService.stop()
+//        firestoreService.stop()
         
         try! auth.signOut()
         
@@ -84,19 +85,21 @@ class AuthService {
         auth.createUser(withEmail: email, password: password) { authResult, error in
             if error != nil {
                 
-                // alert user of error here
-                
-                return
+                print("Error signing up")
+
             } else {
                 
                 if self.userId != nil {
                     
                     // creates user in firebase firestore
-                    self.firestoreService.createUser(userId: self.userId!)
+                    self.firestoreService.createUser(userId: self.userId!, email: email)
                     
                     print("Creating new user document in Firestore")
+                    
                 } else {
+                    
                     fatalError("user id is null")
+                    
                 }
                 
                 
@@ -121,9 +124,8 @@ class AuthService {
             stopListening()
         }
         
-        authListener = auth.addStateDidChangeListener { fireAuth, user in
+        authListener = { fireAuth, _ in
             
-            // if user is signed in
             if (fireAuth.currentUser != nil) {
                 
                 self.firestoreService.start(userID: fireAuth.currentUser!.uid)
@@ -131,22 +133,28 @@ class AuthService {
                 self.signedInChangePublisher.send(true)
                 
                 
-            // if they are not signed in
             } else {
+                
                 
                 self.signedInChangePublisher.send(false)
                 
                 self.firestoreService.stop()
+                
             }
         }
+ 
+        
+        handle = auth.addStateDidChangeListener(authListener!)
+        
     }
     
     func stopListening() {
-        if (authListener != nil) {
-            if let handle = authListener {
-                auth.removeStateDidChangeListener(handle)
-            }
+        if (authListener != nil && handle != nil) {
+            
+            auth.removeStateDidChangeListener(handle!)
+            
             authListener = nil
+            handle = nil
         }
     }
     

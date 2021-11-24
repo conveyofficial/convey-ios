@@ -12,8 +12,6 @@
 		4EB31C84274877E900F6EF42 /* conveyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB31C83274877E900F6EF42 /* conveyTests.swift */; };
 		4EB31C8A274878CF00F6EF42 /* RecordViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB31C7B2748766200F6EF42 /* RecordViewModelTest.swift */; };
 		4EB31C8D27487D0F00F6EF42 /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463142731D08D008160E5 /* RecordViewModel.swift */; };
-		4EB71E34273310A2000CEB92 /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB71E33273310A2000CEB92 /* FirestoreUser.swift */; };
-		4EB71E362733118F000CEB92 /* FirestoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB71E352733118F000CEB92 /* FirestoreRecord.swift */; };
 		A5914DB1018B5E86D0688A63 /* Pods_convey__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF991D557DC0A6DD4CDCD4DE /* Pods_convey__iOS_.framework */; };
 		F82463032731CE9D008160E5 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463002731CE9A008160E5 /* LandingViewModel.swift */; };
 		F82463042731CE9D008160E5 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82463012731CE9B008160E5 /* SignInViewModel.swift */; };
@@ -30,18 +28,18 @@
 		F824631F27330F15008160E5 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824631E27330F15008160E5 /* RecordView.swift */; };
 		F824632327330FDB008160E5 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824632227330FDB008160E5 /* AlertService.swift */; };
 		F85150192730D97E0089C7C4 /* conveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150062730D9790089C7C4 /* conveyApp.swift */; };
-		F851501A2730D97E0089C7C4 /* conveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150062730D9790089C7C4 /* conveyApp.swift */; };
 		F851501B2730D97E0089C7C4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150072730D9790089C7C4 /* LandingView.swift */; };
-		F851501C2730D97E0089C7C4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150072730D9790089C7C4 /* LandingView.swift */; };
 		F851501D2730D97E0089C7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85150082730D97E0089C7C4 /* Assets.xcassets */; };
 		F851501E2730D97E0089C7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85150082730D97E0089C7C4 /* Assets.xcassets */; };
 		F85150282731C3410089C7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150272731C3410089C7C4 /* AppDelegate.swift */; };
-		F85150292731C3410089C7C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150272731C3410089C7C4 /* AppDelegate.swift */; };
 		F85150312731CC8E0089C7C4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F85150302731CC8E0089C7C4 /* GoogleService-Info.plist */; };
 		F85150342731CD9C0089C7C4 /* AppModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150322731CD9A0089C7C4 /* AppModule.swift */; };
 		F85150352731CD9C0089C7C4 /* ViewModelModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150332731CD9C0089C7C4 /* ViewModelModule.swift */; };
 		F85150382731CDAC0089C7C4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150362731CDAB0089C7C4 /* AuthService.swift */; };
 		F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150372731CDAC0089C7C4 /* FirestoreService.swift */; };
+		F87E8F53274EAD310078EAF0 /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E8F51274EAD310078EAF0 /* FirestoreUser.swift */; };
+		F87E8F55274EAD320078EAF0 /* FirestoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E8F52274EAD310078EAF0 /* FirestoreRecord.swift */; };
+		F87E8F5A274EBBAC0078EAF0 /* SummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E8F59274EBBAC0078EAF0 /* SummaryCardView.swift */; };
 		F8A11B3E2744B88F001D1326 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A11B3D2744B88F001D1326 /* CodableUtils.swift */; };
 		F8A11B402744B9A2001D1326 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A11B3F2744B9A2001D1326 /* StringUtils.swift */; };
 /* End PBXBuildFile section */
@@ -62,8 +60,6 @@
 		4EB31C7B2748766200F6EF42 /* RecordViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModelTest.swift; sourceTree = "<group>"; };
 		4EB31C81274877E900F6EF42 /* conveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = conveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EB31C83274877E900F6EF42 /* conveyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conveyTests.swift; sourceTree = "<group>"; };
-		4EB71E33273310A2000CEB92 /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = SOURCE_ROOT; };
-		4EB71E352733118F000CEB92 /* FirestoreRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRecord.swift; sourceTree = SOURCE_ROOT; };
 		65CC18A1A82B8116D120A7C2 /* Pods_conveyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_conveyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76752030131F488D8FE52230 /* Pods-conveyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-conveyTests.release.xcconfig"; path = "Target Support Files/Pods-conveyTests/Pods-conveyTests.release.xcconfig"; sourceTree = "<group>"; };
 		83FB8B1D25594D984197D2DD /* Pods-convey (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).release.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +95,9 @@
 		F85150332731CD9C0089C7C4 /* ViewModelModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelModule.swift; sourceTree = "<group>"; };
 		F85150362731CDAB0089C7C4 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F85150372731CDAC0089C7C4 /* FirestoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		F87E8F51274EAD310078EAF0 /* FirestoreUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirestoreUser.swift; path = "../../../../../../convey-ios/convey/FirestoreUser.swift"; sourceTree = "<group>"; };
+		F87E8F52274EAD310078EAF0 /* FirestoreRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirestoreRecord.swift; path = "../../../../../../convey-ios/convey/FirestoreRecord.swift"; sourceTree = "<group>"; };
+		F87E8F59274EBBAC0078EAF0 /* SummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCardView.swift; sourceTree = "<group>"; };
 		F8A11B3D2744B88F001D1326 /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		F8A11B3F2744B9A2001D1326 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		FBAF9982C5B95020FB5A1B38 /* Pods-convey (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).debug.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,20 +175,12 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		F82462FF2731CE4C008160E5 /* Firestore */ = {
-			isa = PBXGroup;
-			children = (
-				4EB71E33273310A2000CEB92 /* FirestoreUser.swift */,
-				4EB71E352733118F000CEB92 /* FirestoreRecord.swift */,
-			);
-			path = Firestore;
-			sourceTree = "<group>";
-		};
 		F824630A2731CFC4008160E5 /* Authed */ = {
 			isa = PBXGroup;
 			children = (
 				F824631E27330F15008160E5 /* RecordView.swift */,
 				F82463122731D02D008160E5 /* SummaryView.swift */,
+				F87E8F59274EBBAC0078EAF0 /* SummaryCardView.swift */,
 			);
 			path = Authed;
 			sourceTree = "<group>";
@@ -321,10 +312,19 @@
 		F851503A2731CDCA0089C7C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F82462FF2731CE4C008160E5 /* Firestore */,
+				F87E8F50274EAD220078EAF0 /* Firestore */,
 				F82463182731D488008160E5 /* AuthData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F87E8F50274EAD220078EAF0 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				F87E8F52274EAD310078EAF0 /* FirestoreRecord.swift */,
+				F87E8F51274EAD310078EAF0 /* FirestoreUser.swift */,
+			);
+			path = Firestore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,12 +573,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A11B3E2744B88F001D1326 /* CodableUtils.swift in Sources */,
-				4EB71E362733118F000CEB92 /* FirestoreRecord.swift in Sources */,
+				F87E8F53274EAD310078EAF0 /* FirestoreUser.swift in Sources */,
 				F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */,
 				F824630F2731CFF1008160E5 /* TabCurve.swift in Sources */,
 				F824631F27330F15008160E5 /* RecordView.swift in Sources */,
 				F85150352731CD9C0089C7C4 /* ViewModelModule.swift in Sources */,
-				4EB71E34273310A2000CEB92 /* FirestoreUser.swift in Sources */,
 				F824631B2731D4E0008160E5 /* CustomTextField.swift in Sources */,
 				F82463052731CE9D008160E5 /* SignUpViewModel.swift in Sources */,
 				F824630D2731CFE3008160E5 /* CustomTabBar.swift in Sources */,
@@ -590,6 +589,7 @@
 				F82463082731CEB2008160E5 /* SignUpView.swift in Sources */,
 				F82463092731CEB2008160E5 /* SignInView.swift in Sources */,
 				F82463172731D204008160E5 /* SummaryViewModel.swift in Sources */,
+				F87E8F5A274EBBAC0078EAF0 /* SummaryCardView.swift in Sources */,
 				F824631D2731D50F008160E5 /* ViewUtils.swift in Sources */,
 				F85150342731CD9C0089C7C4 /* AppModule.swift in Sources */,
 				F82463042731CE9D008160E5 /* SignInViewModel.swift in Sources */,
@@ -597,6 +597,7 @@
 				F85150382731CDAC0089C7C4 /* AuthService.swift in Sources */,
 				F851501B2730D97E0089C7C4 /* LandingView.swift in Sources */,
 				F824632327330FDB008160E5 /* AlertService.swift in Sources */,
+				F87E8F55274EAD320078EAF0 /* FirestoreRecord.swift in Sources */,
 				F85150192730D97E0089C7C4 /* conveyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,9 +606,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F85150292731C3410089C7C4 /* AppDelegate.swift in Sources */,
-				F851501C2730D97E0089C7C4 /* LandingView.swift in Sources */,
-				F851501A2730D97E0089C7C4 /* conveyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,7 +655,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5F9252RPU5;
+				DEVELOPMENT_TEAM = 2NZD2D4P23;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -728,6 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -781,8 +780,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -795,10 +796,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PUT4289XMB;
+				DEVELOPMENT_TEAM = 2NZD2D4P23;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -818,10 +819,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PUT4289XMB;
+				DEVELOPMENT_TEAM = 2NZD2D4P23;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '14.5'
 
 target 'convey (iOS)' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -22,8 +22,11 @@ target 'convey (macOS)' do
 end
 
 target 'conveyTests' do
+
   use_frameworks!
+
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift', '8.3.0-beta'
+
 end

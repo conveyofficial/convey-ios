@@ -88,12 +88,19 @@
 			<key>orderHint</key>
 			<integer>17</integer>
 		</dict>
-		<key>PromisesObjC.xcscheme</key>
+		<key>Pods-conveyTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>18</integer>
+		</dict>
+		<key>PromisesObjC.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>19</integer>
 		</dict>
 		<key>abseil.xcscheme</key>
 		<dict>

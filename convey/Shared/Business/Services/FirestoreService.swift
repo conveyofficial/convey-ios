@@ -13,7 +13,7 @@ import FirebaseFirestoreSwift
 class FirestoreService {
     
     let db = Firestore.firestore()
-    var userPublisher = CurrentValueSubject<FirestoreUser?, Never>(nil)
+    var userRecordsPublisher = CurrentValueSubject<[FirestoreRecord]?, Never>(nil)
     var userID = ""
     
     
@@ -31,43 +31,60 @@ class FirestoreService {
     
     func stop() {
         userID = ""
-        userPublisher.send(nil)
+        userRecordsPublisher.send(nil)
     }
     
     
     // listens for changes in this person's firestore user data
     func startUserListener() {
-        db.collection("users").document(userID)
+        db.collection("users")
+            .document(userID)
+            .collection("Records")
             .addSnapshotListener { snapshot, err in
                 
-                
                 if let err = err {
+                    
                     print("Error getting documents: \(err)")
+                    
                 } else {
                     
+                    var recordsList = [FirestoreRecord]()
                     
-                    self.userPublisher.send(try? snapshot?.data(as: FirestoreUser.self))
+                    if snapshot?.documents != nil {
                     
+                        for document in snapshot!.documents {
+                            
+                            let record = try? document.data(as: FirestoreRecord.self)
+                            
+                            if record != nil {
+                                recordsList.append(record!)
+                            }
+                            
+                            
+                            
+                        }
+                    }
+                    
+                    self.userRecordsPublisher.send(recordsList)
                 }
                 
             }
     }
     
     
-    func createUser(userId : String) {
+    func createUser(userId : String, email : String) {
             
             
-            try? db.collection("users").document(userId)
+            try? db.collection("users")
+                .document(userId) // userId from Authentication
                 .setData(from:
                             
-                    FirestoreUser(
-                        UserId: userID,
-                        Records: []
-                    )
-                
-                ) { [weak self] err in
-                    guard let self = self else { return }
+                    FirestoreUser(Email: email)
+                    
+                    ) { err in
+              
                     if let err = err {
+                        
                         print("err creating user... \(err)")
                         //self.yourErrorAlert()
                     }
@@ -76,35 +93,36 @@ class FirestoreService {
                       
                     }
                 }
+        
+        
+        
         }
     
     func uploadRecordToUser(text : String, time : Double, recordName : String) {
         
-//        var wpm = text.numberOfWords / (Int(time)/60)
+        let wpm = text.numberOfWords / Int(time)
         
         // RecordName should be differnet here
         
-        var newRecord = FirestoreRecord(
+        let newRecord = FirestoreRecord(
             RecordId: UUID().uuidString,
             RecordName: recordName,
             ParsedText: text,
             Time: time,
             WordCount: text.numberOfWords,
-            Wpm: nil,
-            HighestFreqWords: nil,
-            SpecialWordsUniversal: nil,
-            SpecialWordsPersonal: nil,
-            FillerWordCount: nil,
-            HighestFillerWords: nil,
-            FillerWordsPace: nil,
-            WordsPerFillerWords: nil)
+            Wpm: wpm,
+            fillerSet: nil,
+            topFreqFillers: nil,
+            topFreqWords: nil,
+            wordFreq: nil
+             )
         
         
-        try? db.collection("users").document(userID)
-            .updateData([
-                "Records" : FieldValue.arrayUnion([newRecord.asDictionary()])
-            ]) { [weak self] err in
-                guard let self = self else { return }
+        let _ = try? db.collection("users")
+            .document(userID)
+            .collection("Records")
+            .addDocument(data: newRecord.asDictionary()) { err in
+            
                 if let err = err {
                     
                     print("err adding transcription \(err)")

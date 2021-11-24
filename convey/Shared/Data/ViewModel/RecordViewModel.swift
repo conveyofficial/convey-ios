@@ -20,6 +20,12 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     @Published var promptAction = false
     @Published var recordName : String = ""
     
+    @Published var hours: Int = 0
+    @Published var minutes: Int = 0
+    @Published var seconds: Int = 0
+    
+    @Published var timer: Timer? = nil
+    
     private var recordingSession: AVAudioSession!
     private var audioRecorder: AVAudioRecorder!
     
@@ -29,6 +35,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     init(firestoreService : FirestoreService, authService : AuthService) {
         self.firestoreService = firestoreService
         self.authService = authService
+        
     }
     
     func signOut() {
@@ -80,6 +87,8 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
             audioRecorder.record()
             
             isRecording = true
+            recordName = ""
+            startTimer()
             
         } catch {
             finishRecording(success: false)
@@ -89,13 +98,23 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     func onStopRecordingTap() {
         print("Stopping Recording")
         
+        stopTimer()
+        
         finishRecording(success: true)
+        
+        
+        
+        time = (Double(seconds) + (60.0 * Double(minutes)))
+        
+        seconds = 0
+        minutes = 0
+        hours = 0
         
     }
     
     func finishRecording(success: Bool) {
         
-        time = audioRecorder.currentTime
+//        time = audioRecorder.currentTime
         
         audioRecorder.stop()
         audioRecorder = nil
@@ -105,6 +124,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
             
             isRecording = false
             promptAction = true
+            
             
         } else {
             
@@ -175,13 +195,21 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
         let recognizer = SFSpeechRecognizer()
         let request = SFSpeechURLRecognitionRequest(url: url)
         
-        
+        if recognizer != nil {
+            
+            print("RECOGNIZER NOT NIL")
+        if recognizer!.isAvailable {
+            
+            print("RECOGNIZER IS AVAILABLE")
 
         
-        recognizer?.recognitionTask(with: request) { (result, error) in
+        recognizer?.recognitionTask(with: request) { result, error in
             
             guard let result = result else {
-                print("There was an error: \(error!)")
+                
+                print("There was an error: \(error?.localizedDescription ?? nil)")
+                
+                
                 return
             }
 
@@ -192,17 +220,27 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
                 
                 self.firestoreService.uploadRecordToUser(text: result.bestTranscription.formattedString, time: self.time, recordName: self.recordName)
                 
-                self.time = 0
+//                recognizer?.finalize()
+//                self.time = 0
                 
                 // sends data to firebase
             }
         }
+            
+        }
+    }
     }
     
     func saveRecord() {
         promptAction = false
         
         print("transcribing audio")
+        
+        if getDocumentsDirectory().appendingPathComponent("recording.m4a").isFileURL {
+            print("is file")
+        }
+        
+        print(getDocumentsDirectory().appendingPathComponent("recording.m4a"))
         
         transcribeAudio(url: getDocumentsDirectory().appendingPathComponent("recording.m4a"))
         
@@ -223,6 +261,39 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
         if !flag {
             finishRecording(success: false)
         }
+        
+    }
+    
+    func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { tempTimer in
+            if self.seconds == 59 {
+                
+                self.seconds = 0
+                
+                if self.minutes == 59 {
+                    
+                    self.minutes = 0
+                    self.hours = self.hours + 1
+                    
+                }
+                else {
+                    
+                    self.minutes = self.minutes + 1
+                    
+                }
+            }
+            else {
+                
+                self.seconds = self.seconds + 1
+                
+            }
+        }
+    }
+    
+    func stopTimer() {
+        
+        timer?.invalidate()
+        timer = nil
         
     }
     

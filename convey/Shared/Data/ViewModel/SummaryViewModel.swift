@@ -27,24 +27,35 @@ class SummaryViewModel : ObservableObject {
     func setupListeners() {
         
         
-        firestoreService.userPublisher
-            .sink { user in
+        firestoreService.userRecordsPublisher
+            .sink { records in
                 
-                if user != nil {
-
-                    if !user!.Records!.isEmpty {
-                        
-                        self.recordList = user!.Records!
-                        
-                    }
-                    
+                if records != nil {
+                    self.recordList = records!
                 }
+                        
                 
             }.store(in: &cancellables)
     }
     
     func signOut() {
+        
         authService.signOut()
+        
+    }
+    
+    func getFillerWordCount(topFreqFillerDict : [String : Int]) -> Int {
+        
+        
+        var totalFillers = 0
+        
+        
+        for fillerCount in topFreqFillerDict.values {
+            totalFillers += fillerCount
+        }
+        
+        return totalFillers
+        
     }
     
 }
