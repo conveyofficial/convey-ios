@@ -30,11 +30,11 @@ struct SignUpView : View {
     
     var signUpFields : some View {
         VStack {
-            CustomTextField(image: "person", placeHolder: "Username or Email Address", txt: $viewModel.email, color : Color.black)
+            CustomTextField(image: "person", placeHolder: "Email Address", txt: $viewModel.email, color : Color.gray)
                 .foregroundColor(.black)
-            CustomTextField(image: "lock", placeHolder: "Password", txt: $viewModel.password, color : Color.black)
+            CustomTextField(image: "lock", placeHolder: "Password", txt: $viewModel.password, color : Color.gray)
                 .foregroundColor(.black)
-            CustomTextField(image: "lock", placeHolder: "Re-Enter Password", txt: $viewModel.passwordReEntered, color : Color.black)
+            CustomTextField(image: "lock", placeHolder: "Re-Enter Password", txt: $viewModel.passwordReEntered, color : Color.gray)
                 .foregroundColor(.black)
                 
         }

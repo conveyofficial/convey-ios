@@ -100,7 +100,7 @@ struct CustomTextField : View {
             case "Password", "Re-Enter Password":
                 passwordText
                 
-            case "Username or Email Address":
+            case "Username or Email Address", "Email Address":
                 emailAddress
                 
             default:
