@@ -16,6 +16,12 @@ class FirestoreService {
     var userRecordsPublisher = CurrentValueSubject<[FirestoreRecord]?, Never>(nil)
     var userID = ""
     
+    private var alertService : AlertService
+    
+    init(alertService : AlertService) {
+        self.alertService = alertService
+    }
+    
     
     func start(userID : String) {
         
@@ -100,12 +106,37 @@ class FirestoreService {
     
     func uploadRecordToUser(text : String, time : Double, recordName : String) {
         
-        let wpm = text.numberOfWords / Int(time)
+        
+        
+        var minutes = 0.0
+        
+        if time != 0.0 {
+            
+            minutes = time / 60.0
+            
+        }
+        
+        let textWords = Double(text.numberOfWords)
+        
+        print("MIN in UPUSRREC: \(minutes)")
+        
+        print("TEXTWORDS: \(textWords)")
+        
+        var wpm = 0.0
+        
+        if textWords != 0.0 {
+            
+            wpm = textWords / minutes
+            
+        }
         
         // RecordName should be differnet here
         
+        print("RECORDING TEXT")
+        print(text)
+        print(userID)
+        
         let newRecord = FirestoreRecord(
-            RecordId: UUID().uuidString,
             RecordName: recordName,
             ParsedText: text,
             Time: time,
@@ -115,25 +146,36 @@ class FirestoreService {
             topFreqFillers: nil,
             topFreqWords: nil,
             wordFreq: nil
-             )
+            )
         
         
-        let _ = try? db.collection("users")
+        let error = try! db.collection("users")
             .document(userID)
             .collection("Records")
-            .addDocument(data: newRecord.asDictionary()) { err in
+            .addDocument(from: newRecord) { [self] err in
             
                 if let err = err {
                     
                     print("err adding transcription \(err)")
                     //self.yourErrorAlert()
+                    
+                    alertService.loadingPublisher.send(false)
+                    
+                    alertService.alertLoadingPublisher.send(true)
+                    alertService.alertMessagePublisher.send(err.localizedDescription)
+                    
+                    
                 }
                 else {
+                    
+                    alertService.loadingPublisher.send(false)
                     
                     print("saved ok")
                   
                 }
             }
+        
+        print(error)
         
     }
     

@@ -19,6 +19,7 @@ class AppModule {
     
     private static var authService : AuthService? = nil
     private static var firestoreService : FirestoreService? = nil
+    private static var alertService : AlertService? = nil
     
     
     static func passAuthService() -> AuthService {
@@ -40,9 +41,16 @@ class AppModule {
     
     static func passFirestoreService() -> FirestoreService {
         
-        firestoreService = firestoreService ?? FirestoreService()
+        firestoreService = firestoreService ?? FirestoreService(alertService: self.passAlertService())
         
         return firestoreService!
+    }
+    
+    static func passAlertService() -> AlertService {
+        
+        alertService = alertService ?? AlertService()
+        
+        return alertService!
     }
     
     

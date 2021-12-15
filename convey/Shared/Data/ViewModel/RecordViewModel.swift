@@ -12,6 +12,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     
     private var firestoreService : FirestoreService
     private var authService : AuthService
+    private var alertService : AlertService
     
     @AppStorage("RECORD_ALLOWED") var canRecord : Bool = false
     @AppStorage("TRANSCRIBE_ALLOWED") var canTranscribe : Bool = false
@@ -32,9 +33,10 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     @Published var time = 0.0
    
     
-    init(firestoreService : FirestoreService, authService : AuthService) {
+    init(firestoreService : FirestoreService, authService : AuthService, alertService : AlertService) {
         self.firestoreService = firestoreService
         self.authService = authService
+        self.alertService = alertService
         
     }
     
@@ -196,19 +198,20 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
         let request = SFSpeechURLRecognitionRequest(url: url)
         
         if recognizer != nil {
-            
-            print("RECOGNIZER NOT NIL")
         if recognizer!.isAvailable {
             
-            print("RECOGNIZER IS AVAILABLE")
+           
 
         
-        recognizer?.recognitionTask(with: request) { result, error in
+        recognizer?.recognitionTask(with: request) { [self] result, error in
             
             guard let result = result else {
                 
-                print("There was an error: \(error?.localizedDescription ?? nil)")
+//                print("There was an error: \(error?.localizedDescription ?? nil)")
+                alertService.loadingPublisher.send(false)
                 
+                alertService.alertLoadingPublisher.send(true)
+                alertService.alertMessagePublisher.send(error?.localizedDescription ?? "Error has occured.")
                 
                 return
             }
@@ -218,7 +221,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
                 
                 print(result.bestTranscription.formattedString)
                 
-                self.firestoreService.uploadRecordToUser(text: result.bestTranscription.formattedString, time: self.time, recordName: self.recordName)
+                firestoreService.uploadRecordToUser(text: result.bestTranscription.formattedString, time: self.time, recordName: self.recordName)
                 
 //                recognizer?.finalize()
 //                self.time = 0
@@ -233,6 +236,8 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     
     func saveRecord() {
         promptAction = false
+        
+        alertService.loadingPublisher.send(true)
         
         print("transcribing audio")
         

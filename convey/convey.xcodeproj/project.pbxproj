@@ -27,6 +27,8 @@
 		F824631D2731D50F008160E5 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824631C2731D50F008160E5 /* ViewUtils.swift */; };
 		F824631F27330F15008160E5 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824631E27330F15008160E5 /* RecordView.swift */; };
 		F824632327330FDB008160E5 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F824632227330FDB008160E5 /* AlertService.swift */; };
+		F826897C276919360015225B /* LoadingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F826897B276919360015225B /* LoadingAnimation.swift */; };
+		F8268980276A3D100015225B /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F826897F276A3D100015225B /* BarChart.swift */; };
 		F85150192730D97E0089C7C4 /* conveyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150062730D9790089C7C4 /* conveyApp.swift */; };
 		F851501B2730D97E0089C7C4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85150072730D9790089C7C4 /* LandingView.swift */; };
 		F851501D2730D97E0089C7C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F85150082730D97E0089C7C4 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		F824631C2731D50F008160E5 /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		F824631E27330F15008160E5 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		F824632227330FDB008160E5 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		F826897B276919360015225B /* LoadingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimation.swift; sourceTree = "<group>"; };
+		F826897F276A3D100015225B /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		F85150062730D9790089C7C4 /* conveyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conveyApp.swift; sourceTree = "<group>"; };
 		F85150072730D9790089C7C4 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		F85150082730D97E0089C7C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,7 +194,9 @@
 			children = (
 				F824631A2731D4E0008160E5 /* CustomTextField.swift */,
 				F824630E2731CFF1008160E5 /* TabCurve.swift */,
+				F826897B276919360015225B /* LoadingAnimation.swift */,
 				F824630C2731CFE3008160E5 /* CustomTabBar.swift */,
+				F826897F276A3D100015225B /* BarChart.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -581,11 +587,13 @@
 				F824631B2731D4E0008160E5 /* CustomTextField.swift in Sources */,
 				F82463052731CE9D008160E5 /* SignUpViewModel.swift in Sources */,
 				F824630D2731CFE3008160E5 /* CustomTabBar.swift in Sources */,
+				F826897C276919360015225B /* LoadingAnimation.swift in Sources */,
 				F82463132731D02D008160E5 /* SummaryView.swift in Sources */,
 				F82463032731CE9D008160E5 /* LandingViewModel.swift in Sources */,
 				F82463192731D488008160E5 /* AuthData.swift in Sources */,
 				F8A11B402744B9A2001D1326 /* StringUtils.swift in Sources */,
 				F85150282731C3410089C7C4 /* AppDelegate.swift in Sources */,
+				F8268980276A3D100015225B /* BarChart.swift in Sources */,
 				F82463082731CEB2008160E5 /* SignUpView.swift in Sources */,
 				F82463092731CEB2008160E5 /* SignInView.swift in Sources */,
 				F82463172731D204008160E5 /* SummaryViewModel.swift in Sources */,

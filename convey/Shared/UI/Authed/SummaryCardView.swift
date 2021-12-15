@@ -12,7 +12,12 @@ struct SummaryCardView: View {
     
     @ObservedObject private var viewModel = ViewModelModule.passSummaryViewModel()
     
+    @State private var selectedElement: BarChart.DataSet.DataElement? = nil
+    
+    
     var record : FirestoreRecord
+    
+   
     
     @State private var angle: Double = 0
     @State private var expandMoreDetails = false
@@ -49,13 +54,13 @@ struct SummaryCardView: View {
                             
                             if record.RecordName == "" {
                                 Text("No Record Name")
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.white)
                                         .font(.title2.bold())
                                         .lineLimit(1)
                                 
                             } else {
                                 Text(record.RecordName ?? "No Record Name")
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.white)
                                         .font(.title2.bold())
                                         .lineLimit(1)
                             }
@@ -91,38 +96,81 @@ struct SummaryCardView: View {
                         
                         HStack {
                             
-                            Text("Record Details")
+                            Text("Record Summary")
                                 .font(.headline)
                                 .fontWeight(.semibold)
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                             
                             Rectangle()
-                                .fill(Color.black.opacity(0.6))
+                                .fill(Color.white)
                                 .frame(height: 0.5)
                             
                         }
                         .padding(.vertical, 8)
                         .transition(.move(edge: .top))
                         
+                        
+                        
+                        
+                        
+                        
                         Text("Time: " + String(record.Time ?? 0.0) + " seconds")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.subheadline)
                         
                         Text("Word Count: " + String(record.WordCount ?? 0) + " total words")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.subheadline)
                         
-                        Text("Pace: " + String(record.Wpm ?? 0) + " wpm")
-                            .foregroundColor(.black)
+                        Text("Pace: " + viewModel.roundPace(rec: record) + " wpm")
+                            .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.subheadline)
                         
-                        Text("Filler Word Count: \(viewModel.getFillerWordCount(topFreqFillerDict: record.topFreqFillers ?? [:])) fillers")
-                            .foregroundColor(.black)
+                        
+                        
+//                        Text("Filler Word Count: \(viewModel.getFillerWordCount(topFreqFillerDict: record.topFreqFillers ?? [:])) fillers")
+//                            .foregroundColor(.white)
+//                            .fontWeight(.semibold)
+//                            .font(.subheadline)
+                        Text("Vocabulary Rating: " + (record.vocabGrade ?? "No Vocab Rating Available"))
+                            .foregroundColor(.white)
                             .fontWeight(.semibold)
                             .font(.subheadline)
+                        
+                        
+                        if !(record.topFreqFillers?.isEmpty ?? true) {
+                        HStack {
+                            
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(height: 0.5)
+                            
+                            Text("Filler Word Chart")
+                                .font(.subheadline)
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .layoutPriority(1)
+                                .lineLimit(1)
+                            
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(height: 0.5)
+                            
+                            
+                        }
+                        .padding(.vertical, 8)
+                        .transition(.move(edge: .top))
+                        
+                        
+                        
+                            BarChart(dataSet: viewModel.getChartDataSet(rec: record), selectedElement: $selectedElement)
+                        }
+                        
+                        
+//                            .border(Color.white)
                         
                         Spacer()
     

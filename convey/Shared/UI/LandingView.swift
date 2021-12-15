@@ -16,6 +16,8 @@ struct LandingView: View {
         
         ZStack {
             
+            
+            
             // if the user is signed in, it will go to the tenant/owner flow
             if viewModel.isSignedIn {
                 
@@ -53,7 +55,16 @@ struct LandingView: View {
                 SignInView()
                 
             }
-        }.background(Color.white.ignoresSafeArea())
+            
+            if viewModel.isLoading { LoadingAnimation() }
+        }
+        .alert(isPresented: $viewModel.alertShowing) {
+            Alert(title:
+                    Text("Uh oh..."),
+                  message: Text(viewModel.alertMessage),
+                  dismissButton: .default(Text("OK")))
+        }
+        .background(Color.white.ignoresSafeArea())
         
     }
 }

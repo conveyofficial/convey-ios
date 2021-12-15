@@ -20,15 +20,15 @@ class ViewModelModule {
     private static var summaryViewModel : SummaryViewModel? = nil
     
     static func passLandingViewModel() -> LandingViewModel {
-        landingViewModel = landingViewModel ?? LandingViewModel(authService: AppModule.passAuthService(), firestoreService: AppModule.passFirestoreService())
+        landingViewModel = landingViewModel ?? LandingViewModel(authService: AppModule.passAuthService(), firestoreService: AppModule.passFirestoreService(), alertService: AppModule.passAlertService())
         return landingViewModel!
     }
     static func passSignInViewModel() -> SignInViewModel {
-        signinViewModel = signinViewModel ?? SignInViewModel(authService: AppModule.passAuthService())
+        signinViewModel = signinViewModel ?? SignInViewModel(authService: AppModule.passAuthService(), alertService: AppModule.passAlertService())
         return signinViewModel!
     }
     static func passSignUpViewModel() -> SignUpViewModel {
-        signupViewModel = signupViewModel ?? SignUpViewModel(authService: AppModule.passAuthService())
+        signupViewModel = signupViewModel ?? SignUpViewModel(authService: AppModule.passAuthService(), alertService: AppModule.passAlertService())
         return signupViewModel!
     }
     
@@ -39,7 +39,7 @@ class ViewModelModule {
     }
     
     static func passRecordViewModel() -> RecordViewModel {
-        recordViewModel = recordViewModel ?? RecordViewModel(firestoreService: AppModule.passFirestoreService(), authService: AppModule.passAuthService())
+        recordViewModel = recordViewModel ?? RecordViewModel(firestoreService: AppModule.passFirestoreService(), authService: AppModule.passAuthService(), alertService: AppModule.passAlertService())
         
         return recordViewModel!
     }

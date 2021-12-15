@@ -50,19 +50,25 @@ class AuthService {
     
     /// Authentication Functions
     
-    func signIn(username : String, password : String) {
+    func signIn(username : String, password : String, completion : @escaping ((Bool, String)) -> ()) {
+        
         auth.signIn(withEmail: username, password: password, completion: { (result, error) in
             
             if error != nil {
                 
                 // alert user of error here
                 
-                return
+                print(error?.localizedDescription)
+                
+                completion((false, error?.localizedDescription ?? "Error signing up."))
+                
+                
             } else {
                 
                 print(result)
                 
-                // no error, proceed
+                completion((true, ""))
+                
                 
             }
             
@@ -79,13 +85,14 @@ class AuthService {
         
     }
     
-    func signUp(email : String, password : String) {
+    func signUp(email : String, password : String, completion : @escaping ((Bool, String)) -> ()) {
         
         // creates user in firebase authentication
         auth.createUser(withEmail: email, password: password) { authResult, error in
             if error != nil {
                 
                 print("Error signing up")
+                completion((false, error?.localizedDescription ?? "Error signing up."))
 
             } else {
                 
@@ -96,16 +103,15 @@ class AuthService {
                     
                     print("Creating new user document in Firestore")
                     
+                    completion((true, ""))
+                    
                 } else {
+                    
+                    completion((false, "Error signing up. Please try again."))
                     
                     fatalError("user id is null")
                     
                 }
-                
-                
-//                self.firestoreService.create
-                
-                // no error, proceed
                 
                 
             }

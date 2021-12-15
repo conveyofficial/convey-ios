@@ -39,18 +39,53 @@ class SignUpViewModel : ObservableObject {
     }
     
     private var authService : AuthService
+    private var alertService : AlertService
     
-    init(authService : AuthService) {
+    init(authService : AuthService, alertService : AlertService) {
         self.authService = authService
+        self.alertService = alertService
     }
     
 
     func onSignUpTap() {
         
-        authService.signUp(email: email, password: password)
+        alertService.loadingPublisher.send(true)
         
-        signUpData.username = nil
-        signUpData.password = nil
+        if password != passwordReEntered {
+            
+            alertService.loadingPublisher.send(false)
+            
+            alertService.alertLoadingPublisher.send(true)
+            alertService.alertMessagePublisher.send("Cannot sign-up. Passwords do not match.")
+            
+        } else {
+            
+            authService.signUp(email: email, password: password) { [self] (success, error) in
+                
+                if success {
+                    
+                    signUpData.username = nil
+                    signUpData.password = nil
+                    signUpData.passwordReEntered = nil
+                    
+                    alertService.loadingPublisher.send(false)
+                    
+                } else {
+                    
+                    alertService.loadingPublisher.send(false)
+                    
+                    alertService.alertLoadingPublisher.send(true)
+                    alertService.alertMessagePublisher.send(error)
+
+                }
+                
+            }
+            
+            
+            
+        }
+        
+        
         
     }
 

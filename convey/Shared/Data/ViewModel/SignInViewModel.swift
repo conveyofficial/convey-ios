@@ -31,18 +31,40 @@ class SignInViewModel : ObservableObject {
     }
     
     private var authService : AuthService
+    private var alertService : AlertService
     
-    init(authService : AuthService) {
+    init(authService : AuthService, alertService : AlertService) {
         self.authService = authService
+        self.alertService = alertService
     }
     
 
     func onSignInTap() {
         
-        authService.signIn(username: email, password: password)
+        alertService.loadingPublisher.send(true)
         
-        signInData.username = nil
-        signInData.password = nil
+        authService.signIn(username: email, password: password) { [self] (success, error) in
+            
+            if success {
+                
+                signInData.username = nil
+                signInData.password = nil
+                
+                alertService.loadingPublisher.send(false)
+                
+            } else {
+                
+                
+                alertService.loadingPublisher.send(false)
+                
+                alertService.alertLoadingPublisher.send(true)
+                alertService.alertMessagePublisher.send(error)
+                
+            }
+            
+        }
+        
+       
         
     }
     
