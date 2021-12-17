@@ -1,14 +1,10 @@
 //
 //  ViewModelModule.swift
-//  MadRentals
+//  convey
 //
 
 
 import Foundation
-
-
-
-// Similarly to the app module, this acts as a "viewmodel factory"
 
 class ViewModelModule {
     

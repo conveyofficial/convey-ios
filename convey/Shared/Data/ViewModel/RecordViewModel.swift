@@ -31,7 +31,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     private var audioRecorder: AVAudioRecorder!
     
     @Published var time = 0.0
-   
+    
     
     init(firestoreService : FirestoreService, authService : AuthService, alertService : AlertService) {
         self.firestoreService = firestoreService
@@ -75,14 +75,14 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     
     func startRecording() {
         let audioFilename = getDocumentsDirectory().appendingPathComponent("recording.m4a")
-
+        
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
             AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
         ]
-
+        
         do {
             audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
             audioRecorder.delegate = self
@@ -116,7 +116,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
     
     func finishRecording(success: Bool) {
         
-//        time = audioRecorder.currentTime
+        //        time = audioRecorder.currentTime
         
         audioRecorder.stop()
         audioRecorder = nil
@@ -170,7 +170,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
                 }
             }
         } catch {
-    
+            
             
             canRecord = false
         }
@@ -198,40 +198,36 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
         let request = SFSpeechURLRecognitionRequest(url: url)
         
         if recognizer != nil {
-        if recognizer!.isAvailable {
-            
-           
-
-        
-        recognizer?.recognitionTask(with: request) { [self] result, error in
-            
-            guard let result = result else {
+            if recognizer!.isAvailable {
                 
-//                print("There was an error: \(error?.localizedDescription ?? nil)")
-                alertService.loadingPublisher.send(false)
                 
-                alertService.alertLoadingPublisher.send(true)
-                alertService.alertMessagePublisher.send(error?.localizedDescription ?? "Error has occured.")
                 
-                return
-            }
-
-            
-            if result.isFinal {
                 
-                print(result.bestTranscription.formattedString)
+                recognizer?.recognitionTask(with: request) { [self] result, error in
+                    
+                    guard let result = result else {
+                        
+                        
+                        alertService.loadingPublisher.send(false)
+                        
+                        alertService.alertLoadingPublisher.send(true)
+                        alertService.alertMessagePublisher.send(error?.localizedDescription ?? "Error has occured.")
+                        
+                        return
+                    }
+                    
+                    
+                    if result.isFinal {
+                        
+                        print(result.bestTranscription.formattedString)
+                        
+                        firestoreService.uploadRecordToUser(text: result.bestTranscription.formattedString, time: self.time, recordName: self.recordName)
+                        
+                    }
+                }
                 
-                firestoreService.uploadRecordToUser(text: result.bestTranscription.formattedString, time: self.time, recordName: self.recordName)
-                
-//                recognizer?.finalize()
-//                self.time = 0
-                
-                // sends data to firebase
             }
         }
-            
-        }
-    }
     }
     
     func saveRecord() {
@@ -256,7 +252,7 @@ class RecordViewModel : NSObject, ObservableObject, AVAudioRecorderDelegate {
         
         promptAction = false
         
-    
+        
         
         
     }

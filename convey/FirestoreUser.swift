@@ -7,6 +7,4 @@
 
 struct FirestoreUser : Codable {
     var Email : String? = nil
-//    var UserId : String? = nil
-//    var Records : [FirestoreRecord]? = nil
 }

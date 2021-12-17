@@ -42,7 +42,6 @@
 		F87E8F53274EAD310078EAF0 /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E8F51274EAD310078EAF0 /* FirestoreUser.swift */; };
 		F87E8F55274EAD320078EAF0 /* FirestoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E8F52274EAD310078EAF0 /* FirestoreRecord.swift */; };
 		F87E8F5A274EBBAC0078EAF0 /* SummaryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E8F59274EBBAC0078EAF0 /* SummaryCardView.swift */; };
-		F8A11B3E2744B88F001D1326 /* CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A11B3D2744B88F001D1326 /* CodableUtils.swift */; };
 		F8A11B402744B9A2001D1326 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A11B3F2744B9A2001D1326 /* StringUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,7 +101,6 @@
 		F87E8F51274EAD310078EAF0 /* FirestoreUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirestoreUser.swift; path = "../../../../../../convey-ios/convey/FirestoreUser.swift"; sourceTree = "<group>"; };
 		F87E8F52274EAD310078EAF0 /* FirestoreRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirestoreRecord.swift; path = "../../../../../../convey-ios/convey/FirestoreRecord.swift"; sourceTree = "<group>"; };
 		F87E8F59274EBBAC0078EAF0 /* SummaryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryCardView.swift; sourceTree = "<group>"; };
-		F8A11B3D2744B88F001D1326 /* CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUtils.swift; sourceTree = "<group>"; };
 		F8A11B3F2744B9A2001D1326 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		FBAF9982C5B95020FB5A1B38 /* Pods-convey (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-convey (iOS).debug.xcconfig"; path = "Target Support Files/Pods-convey (iOS)/Pods-convey (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				F824631C2731D50F008160E5 /* ViewUtils.swift */,
-				F8A11B3D2744B88F001D1326 /* CodableUtils.swift */,
 				F8A11B3F2744B9A2001D1326 /* StringUtils.swift */,
 			);
 			path = Utils;
@@ -578,7 +575,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A11B3E2744B88F001D1326 /* CodableUtils.swift in Sources */,
 				F87E8F53274EAD310078EAF0 /* FirestoreUser.swift in Sources */,
 				F85150392731CDAC0089C7C4 /* FirestoreService.swift in Sources */,
 				F824630F2731CFF1008160E5 /* TabCurve.swift in Sources */,

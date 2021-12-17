@@ -1,6 +1,6 @@
 //
 //  SignUpView.swift
-//  MadRentals
+//  convey
 //
 //  Created by Galen Quinn on 10/3/21.
 //
@@ -16,14 +16,14 @@ struct SignUpView : View {
         ZStack {
             
             
-                
-                    
-                Text("Sign Up")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.blue)
-                    
-                
+            
+            
+            Text("Sign Up")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.blue)
+            
+            
             
         }
     }
@@ -36,7 +36,7 @@ struct SignUpView : View {
                 .foregroundColor(.black)
             CustomTextField(image: "lock", placeHolder: "Re-Enter Password", txt: $viewModel.passwordReEntered, color : Color.gray)
                 .foregroundColor(.black)
-                
+            
         }
         .padding(.horizontal, 15)
     }
@@ -44,7 +44,7 @@ struct SignUpView : View {
     var signUpButton : some View {
         Button(action: {
             
-                viewModel.onSignUpTap()
+            viewModel.onSignUpTap()
             
         }) {
             Text("SIGN UP")
@@ -55,29 +55,29 @@ struct SignUpView : View {
                 .background(Color.blue.clipShape(Capsule()).shadow(radius: 2))
         }
         .padding(.vertical)
-
+        
     }
     
     var body: some View {
         
         NavigationView {
+            
+            VStack {
                 
-                VStack {
-                    
-                    titleSection
-                    
-                    Spacer()
-                    
-                    Spacer()
-                    
-                    signUpFields
-                    
-                    signUpButton
-                        
-                    Spacer()
-                    
-                }
-                .background(Color.white.ignoresSafeArea())
+                titleSection
+                
+                Spacer()
+                
+                Spacer()
+                
+                signUpFields
+                
+                signUpButton
+                
+                Spacer()
+                
+            }
+            .background(Color.white.ignoresSafeArea())
         }
         .navigationViewStyle(StackNavigationViewStyle())
         

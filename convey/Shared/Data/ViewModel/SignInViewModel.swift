@@ -1,6 +1,6 @@
 //
 //  SignInViewModel.swift
-//  MadRentals
+//  convey
 //
 //  Created by Galen Quinn on 10/3/21.
 //
@@ -9,7 +9,6 @@ import SwiftUI
 
 class SignInViewModel : ObservableObject {
     
-    // data object we temporarily manipulate when on the sign in page
     @Published var signInData = AuthData()
     
     var email : String {
@@ -38,7 +37,7 @@ class SignInViewModel : ObservableObject {
         self.alertService = alertService
     }
     
-
+    
     func onSignInTap() {
         
         alertService.loadingPublisher.send(true)
@@ -64,7 +63,7 @@ class SignInViewModel : ObservableObject {
             
         }
         
-       
+        
         
     }
     

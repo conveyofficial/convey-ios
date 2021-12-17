@@ -1,6 +1,6 @@
 //
 //  CustomTextField.swift
-//  MadRentals
+//  convey
 //
 
 import UIKit
@@ -13,7 +13,7 @@ struct CustomTextField : View {
     var placeHolder : String
     @Binding var txt : String
     var color : Color
-
+    
     var passwordText : some View {
         
         ZStack(alignment : Alignment(horizontal: .leading, vertical: .center)) {
@@ -114,11 +114,4 @@ struct CustomTextField : View {
         .padding(.horizontal)
     }
     
-    func numericValidator(newValue: String) {
-        if newValue.range(of: "^\\d+$", options: .regularExpression) != nil {
-            self.txt = newValue
-        } else if !self.txt.isEmpty {
-            self.txt = String(newValue.prefix(self.txt.count - 1))
-        }
-    }
 }

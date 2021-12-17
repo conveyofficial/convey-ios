@@ -12,16 +12,16 @@ struct SummaryView : View {
     @ObservedObject private var viewModel = ViewModelModule.passSummaryViewModel()
     
     var titleSection : some View {
-            
-            Text("Recordings")
-                .font(.largeTitle)
-                .fontWeight(.semibold)
-                .foregroundColor(.black)
-                .padding()
-            
+        
+        Text("Recordings")
+            .font(.largeTitle)
+            .fontWeight(.semibold)
+            .foregroundColor(.black)
+            .padding()
+        
         
     }
-
+    
     
     
     
@@ -43,11 +43,11 @@ struct SummaryView : View {
                     ForEach(viewModel.recordList, id: \.RecordId) { rec in
                         
                         SummaryCardView(record: rec)
-                            
+                        
                         
                         
                     }
-//                    .offset(y: -100)
+                    
                     
                 }
                 
@@ -61,12 +61,11 @@ struct SummaryView : View {
         
         VStack {
             
-//            Spacer()
             
             titleSection
             
             recordList
-//
+            
             
             Spacer()
             Spacer()

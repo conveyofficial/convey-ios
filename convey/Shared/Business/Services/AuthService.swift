@@ -1,6 +1,6 @@
 //
 //  AuthService.swift
-//  MadRentals
+//  convey
 //
 
 
@@ -9,7 +9,7 @@ import Combine
 
 class AuthService {
     
-    /// Fields
+    
     
     var signedInChangePublisher = CurrentValueSubject<Bool, Never>(false)
     
@@ -40,7 +40,7 @@ class AuthService {
     
     private var firestoreService : FirestoreService
     
-    /// Services initialization 
+    
     
     init(firestoreService : FirestoreService) {
         self.firestoreService = firestoreService
@@ -48,7 +48,7 @@ class AuthService {
         startListening()
     }
     
-    /// Authentication Functions
+    
     
     func signIn(username : String, password : String, completion : @escaping ((Bool, String)) -> ()) {
         
@@ -56,16 +56,14 @@ class AuthService {
             
             if error != nil {
                 
-                // alert user of error here
                 
-                print(error?.localizedDescription)
                 
                 completion((false, error?.localizedDescription ?? "Error signing up."))
                 
                 
             } else {
                 
-                print(result)
+                
                 
                 completion((true, ""))
                 
@@ -77,9 +75,8 @@ class AuthService {
     
     func signOut() {
         
-//        stopListening()
-        
-//        firestoreService.stop()
+        firestoreService.stop()
+        stopListening()
         
         try! auth.signOut()
         
@@ -93,7 +90,7 @@ class AuthService {
                 
                 print("Error signing up")
                 completion((false, error?.localizedDescription ?? "Error signing up."))
-
+                
             } else {
                 
                 if self.userId != nil {
@@ -121,11 +118,10 @@ class AuthService {
     }
     
     
-    /// Authentication Listeners
     
     func startListening() {
         
-        // if for some reason listener was already setup we stop the listener
+        
         if (authListener != nil) {
             stopListening()
         }
@@ -148,7 +144,7 @@ class AuthService {
                 
             }
         }
- 
+        
         
         handle = auth.addStateDidChangeListener(authListener!)
         

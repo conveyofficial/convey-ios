@@ -33,7 +33,7 @@ class SummaryViewModel : ObservableObject {
                 if records != nil {
                     self.recordList = records!
                 }
-                        
+                
                 
             }.store(in: &cancellables)
     }
@@ -58,8 +58,6 @@ class SummaryViewModel : ObservableObject {
         
     }
     
-//    @Published var selectedElement: BarChart.DataSet.DataElement? = viewModel.getChartDataSet(rec: record).elements.first
-    
     func roundPace(rec: FirestoreRecord) -> String {
         
         let wpm = rec.Wpm ?? 0.0
@@ -79,7 +77,7 @@ class SummaryViewModel : ObservableObject {
         for (fillerWord, fillerFreq) in rec.topFreqFillers ?? [ : ] {
             
             if index <= 5 {
-            
+                
                 let label = "\"" + fillerWord + "\"" + " said " + String(fillerFreq) + " time(s)"
                 
                 elements.append(BarChart.DataSet.DataElement(date: nil, xLabel: label, bars: [BarChart.DataSet.DataElement.Bar(value: Double(fillerFreq), color: Color.orange)]))

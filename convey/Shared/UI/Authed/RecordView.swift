@@ -25,7 +25,7 @@ struct RecordView : View {
                 .font(.title3)
                 .fontWeight(.semibold)
                 .foregroundColor(.blue)
-                
+            
             
         }
         
@@ -80,7 +80,7 @@ struct RecordView : View {
                 Spacer()
                 
                 Button(action: {
-                
+                    
                     viewModel.deleteRecord()
                 }) {
                     Text("Delete")
@@ -97,26 +97,26 @@ struct RecordView : View {
                 Spacer()
             }
         }
-       
+        
     }
     
     
     var stopButton : some View {
-    
+        
+        
+        
+        Button(action: {
             
+            viewModel.onStopRecordingTap()
             
-            Button(action: {
-                
-                viewModel.onStopRecordingTap()
-                
-            }) {
-                Text("Stop")
-                    .lineLimit(1)
-                    .font(.title)
-                    .foregroundColor(Color.black)
-                    .padding()
-            }
-            .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
+        }) {
+            Text("Stop")
+                .lineLimit(1)
+                .font(.title)
+                .foregroundColor(Color.black)
+                .padding()
+        }
+        .background(Color.red.clipShape(Capsule()).shadow(radius: 2))
         
     }
     
@@ -134,55 +134,55 @@ struct RecordView : View {
     
     
     var body: some View {
+        
+        VStack {
             
-            VStack {
+            signOutDebug
+            
+            titleSection
+            
+            Spacer()
+            
+            if viewModel.isRecording {
                 
-                signOutDebug
+                Text("\(viewModel.minutes):\(viewModel.seconds)").foregroundColor(.black)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                    .padding()
                 
-                titleSection
+            }
+            
+            Spacer()
+            
+            
+            if viewModel.promptAction {
                 
-                Spacer()
+                actionPopup
+                
+            } else {
+                
                 
                 if viewModel.isRecording {
-                
-                    Text("\(viewModel.minutes):\(viewModel.seconds)").foregroundColor(.black)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.black)
-                        .padding()
                     
-                }
-                
-                Spacer()
-                
-                
-                if viewModel.promptAction {
-                    
-                    actionPopup
+                    stopButton
                     
                 } else {
                     
-                    
-                    if viewModel.isRecording {
-                        
-                        stopButton
-                        
-                    } else {
-                        
-                        recordButton
-                        
-                    }
-                    
+                    recordButton
                     
                 }
-                
-                
-                Spacer()
                 
                 
             }
             
-    
+            
+            Spacer()
+            
+            
+        }
+        
+        
         
     }
 }

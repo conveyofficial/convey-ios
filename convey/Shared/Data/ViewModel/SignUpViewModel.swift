@@ -1,6 +1,6 @@
 //
 //  SignUpViewModel.swift
-//  MadRentals
+//  convey
 //
 //  Created by Galen Quinn on 10/3/21.
 //
@@ -46,7 +46,7 @@ class SignUpViewModel : ObservableObject {
         self.alertService = alertService
     }
     
-
+    
     func onSignUpTap() {
         
         alertService.loadingPublisher.send(true)
@@ -76,7 +76,7 @@ class SignUpViewModel : ObservableObject {
                     
                     alertService.alertLoadingPublisher.send(true)
                     alertService.alertMessagePublisher.send(error)
-
+                    
                 }
                 
             }
@@ -88,6 +88,6 @@ class SignUpViewModel : ObservableObject {
         
         
     }
-
+    
     
 }

@@ -1,9 +1,8 @@
 //
 //  FirestoreService.swift
-//  MadRentals
+//  convey
 //
-//  Created by Galen Quinn on 10/4/21.
-//  Trashed by Ting-Hung Lin on 10/6/21
+
 
 import Combine
 import Firebase
@@ -25,8 +24,6 @@ class FirestoreService {
     
     func start(userID : String) {
         
-        // this is where we must start up all of the relevant firestore listeners. we need snapshot listeners on users, apartments, etc, and all sorts of other listeners, whenever there is a change from a firestore listener, we must update a "Publisher" these are local listeners. For example, when we get the value for the value of a tenant, we must "publish" it using the "isTenantChangePublisher." I can explain this more. this is called reactive programming, for swift the framework we use is called Combine
-        
         print("starting firestore")
         self.userID = userID
         startUserListener()
@@ -41,7 +38,7 @@ class FirestoreService {
     }
     
     
-    // listens for changes in this person's firestore user data
+    
     func startUserListener() {
         db.collection("users")
             .document(userID)
@@ -57,13 +54,56 @@ class FirestoreService {
                     var recordsList = [FirestoreRecord]()
                     
                     if snapshot?.documents != nil {
-                    
+                        
                         for document in snapshot!.documents {
                             
                             let record = try? document.data(as: FirestoreRecord.self)
                             
                             if record != nil {
-                                recordsList.append(record!)
+                                
+                                
+                                if record!.topFreqFillers == nil {
+                                    recordsList.append(record!)
+                                } else {
+                                    
+                                    let sortedFillers = record!.topFreqFillers!.sorted { $0.value < $1.value }
+                                    
+                                    var sortedDict = [String : Int]()
+                                    
+                                    for (key, value) in sortedFillers {
+                                        
+                                        sortedDict[key] = value
+                                        
+                                    }
+                                    
+                                    print(sortedDict)
+                                    
+                                    recordsList.append(
+                                        FirestoreRecord(
+                                            RecordId: record!.RecordId,
+                                            RecordName: record!.RecordName,
+                                            ParsedText: record!.ParsedText,
+                                            Time: record!.Time,
+                                            WordCount: record!.WordCount,
+                                            Wpm: record!.Wpm,
+                                            fillerSet: record!.fillerSet,
+                                            topFreqFillers: sortedDict,
+                                            topFreqWords: record!.topFreqWords,
+                                            wordFreq: record!.wordFreq,
+                                            vocabGrade: record!.vocabGrade))
+                                    
+                                    
+                                    
+                                    
+                                }
+                                
+                                
+                           
+                                
+                                
+                                
+                                
+                                
                             }
                             
                             
@@ -79,30 +119,30 @@ class FirestoreService {
     
     
     func createUser(userId : String, email : String) {
-            
-            
-            try? db.collection("users")
-                .document(userId) // userId from Authentication
-                .setData(from:
-                            
-                    FirestoreUser(Email: email)
-                    
-                    ) { err in
-              
-                    if let err = err {
+        
+        
+        try? db.collection("users")
+            .document(userId)
+            .setData(from:
                         
-                        print("err creating user... \(err)")
-                        //self.yourErrorAlert()
-                    }
-                    else {
-                        print("saved ok")
-                      
-                    }
+                        FirestoreUser(Email: email)
+                     
+            ) { err in
+                
+                if let err = err {
+                    
+                    print("err creating user... \(err)")
+    
                 }
+                else {
+                    print("saved ok")
+                    
+                }
+            }
         
         
         
-        }
+    }
     
     func uploadRecordToUser(text : String, time : Double, recordName : String) {
         
@@ -130,7 +170,6 @@ class FirestoreService {
             
         }
         
-        // RecordName should be differnet here
         
         print("RECORDING TEXT")
         print(text)
@@ -146,18 +185,18 @@ class FirestoreService {
             topFreqFillers: nil,
             topFreqWords: nil,
             wordFreq: nil
-            )
+        )
         
         
         let error = try! db.collection("users")
             .document(userID)
             .collection("Records")
             .addDocument(from: newRecord) { [self] err in
-            
+                
                 if let err = err {
                     
                     print("err adding transcription \(err)")
-                    //self.yourErrorAlert()
+                    
                     
                     alertService.loadingPublisher.send(false)
                     
@@ -171,7 +210,7 @@ class FirestoreService {
                     alertService.loadingPublisher.send(false)
                     
                     print("saved ok")
-                  
+                    
                 }
             }
         

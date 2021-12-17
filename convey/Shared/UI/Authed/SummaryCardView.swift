@@ -17,7 +17,7 @@ struct SummaryCardView: View {
     
     var record : FirestoreRecord
     
-   
+    
     
     @State private var angle: Double = 0
     @State private var expandMoreDetails = false
@@ -54,19 +54,19 @@ struct SummaryCardView: View {
                             
                             if record.RecordName == "" {
                                 Text("No Record Name")
-                                        .foregroundColor(.white)
-                                        .font(.title2.bold())
-                                        .lineLimit(1)
+                                    .foregroundColor(.white)
+                                    .font(.title2.bold())
+                                    .lineLimit(1)
                                 
                             } else {
                                 Text(record.RecordName ?? "No Record Name")
-                                        .foregroundColor(.white)
-                                        .font(.title2.bold())
-                                        .lineLimit(1)
+                                    .foregroundColor(.white)
+                                    .font(.title2.bold())
+                                    .lineLimit(1)
                             }
                             
                             
-
+                            
                             
                             
                             
@@ -88,94 +88,92 @@ struct SummaryCardView: View {
                 if expandValueState != 0 {
                     
                     
-                
-                
-                    withAnimation {
                     
-                    VStack(alignment: .leading, spacing: 10) {
+                    
+                    withAnimation {
                         
-                        HStack {
+                        VStack(alignment: .leading, spacing: 10) {
                             
-                            Text("Record Summary")
-                                .font(.headline)
-                                .fontWeight(.semibold)
+                            HStack {
+                                
+                                Text("Record Summary")
+                                    .font(.headline)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                
+                                Rectangle()
+                                    .fill(Color.white)
+                                    .frame(height: 0.5)
+                                
+                            }
+                            .padding(.vertical, 8)
+                            .transition(.move(edge: .top))
+                            
+                            
+                            
+                            
+                            
+                            
+                            Text("Time: " + String(record.Time ?? 0.0) + " seconds")
                                 .foregroundColor(.white)
-                            
-                            Rectangle()
-                                .fill(Color.white)
-                                .frame(height: 0.5)
-                            
-                        }
-                        .padding(.vertical, 8)
-                        .transition(.move(edge: .top))
-                        
-                        
-                        
-                        
-                        
-                        
-                        Text("Time: " + String(record.Time ?? 0.0) + " seconds")
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.subheadline)
-                        
-                        Text("Word Count: " + String(record.WordCount ?? 0) + " total words")
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.subheadline)
-                        
-                        Text("Pace: " + viewModel.roundPace(rec: record) + " wpm")
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.subheadline)
-                        
-                        
-                        
-//                        Text("Filler Word Count: \(viewModel.getFillerWordCount(topFreqFillerDict: record.topFreqFillers ?? [:])) fillers")
-//                            .foregroundColor(.white)
-//                            .fontWeight(.semibold)
-//                            .font(.subheadline)
-                        Text("Vocabulary Rating: " + (record.vocabGrade ?? "No Vocab Rating Available"))
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.subheadline)
-                        
-                        
-                        if !(record.topFreqFillers?.isEmpty ?? true) {
-                        HStack {
-                            
-                            Rectangle()
-                                .fill(Color.white)
-                                .frame(height: 0.5)
-                            
-                            Text("Filler Word Chart")
+                                .fontWeight(.semibold)
                                 .font(.subheadline)
-                                .fontWeight(.semibold)
+                            
+                            Text("Word Count: " + String(record.WordCount ?? 0) + " total words")
                                 .foregroundColor(.white)
-                                .layoutPriority(1)
-                                .lineLimit(1)
+                                .fontWeight(.semibold)
+                                .font(.subheadline)
                             
-                            Rectangle()
-                                .fill(Color.white)
-                                .frame(height: 0.5)
+                            Text("Pace: " + viewModel.roundPace(rec: record) + " wpm")
+                                .foregroundColor(.white)
+                                .fontWeight(.semibold)
+                                .font(.subheadline)
+                            
+                            
+                            
+                            //                        Text("Filler Word Count: \(viewModel.getFillerWordCount(topFreqFillerDict: record.topFreqFillers ?? [:])) fillers")
+                            //                            .foregroundColor(.white)
+                            //                            .fontWeight(.semibold)
+                            //                            .font(.subheadline)
+                            Text("Vocabulary Rating: " + (record.vocabGrade ?? "No Vocab Rating Available"))
+                                .foregroundColor(.white)
+                                .fontWeight(.semibold)
+                                .font(.subheadline)
+                            
+                            
+                            if !(record.topFreqFillers?.isEmpty ?? true) {
+                                
+                                HStack {
+                                    
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(height: 0.5)
+                                    
+                                    Text("Filler Word Chart (\(viewModel.getFillerWordCount(topFreqFillerDict: record.topFreqFillers ?? [:])) total)")
+                                        .font(.subheadline)
+                                        .fontWeight(.semibold)
+                                        .foregroundColor(.white)
+                                        .layoutPriority(1)
+                                        .lineLimit(1)
+                                    
+                                    Rectangle()
+                                        .fill(Color.white)
+                                        .frame(height: 0.5)
+                                    
+                                    
+                                }
+                                .padding(.vertical, 8)
+                                .transition(.move(edge: .top))
+                                
+                                
+                                
+                                BarChart(dataSet: viewModel.getChartDataSet(rec: record), selectedElement: $selectedElement)
+                            }
+                            
+                            Spacer()
                             
                             
                         }
-                        .padding(.vertical, 8)
-                        .transition(.move(edge: .top))
-                        
-                        
-                        
-                            BarChart(dataSet: viewModel.getChartDataSet(rec: record), selectedElement: $selectedElement)
-                        }
-                        
-                        
-//                            .border(Color.white)
-                        
-                        Spacer()
-    
-
-                    }
                         
                     }
                     
@@ -193,7 +191,7 @@ struct SummaryCardView: View {
         .onTapGesture {
             
             (expandValueState == 0) ? withAnimation { expandValueState = 4.5 } : withAnimation { expandValueState = 0}
-
+            
         }
         
     }
@@ -209,8 +207,8 @@ struct SummaryCardView: View {
             return .infinity
         }
     }
- 
-
+    
+    
     func getAngle() -> Double {
         
         if expandValueState == 0 {
@@ -221,7 +219,7 @@ struct SummaryCardView: View {
             
             return 90
             
-
+            
         }
         
     }

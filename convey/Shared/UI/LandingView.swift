@@ -10,7 +10,7 @@ import SwiftUI
 struct LandingView: View {
     
     @ObservedObject private var viewModel = ViewModelModule.passLandingViewModel()
-
+    
     
     var body: some View {
         
@@ -18,7 +18,7 @@ struct LandingView: View {
             
             
             
-            // if the user is signed in, it will go to the tenant/owner flow
+            
             if viewModel.isSignedIn {
                 
                 
@@ -36,20 +36,19 @@ struct LandingView: View {
                         SummaryView()
                     }
                     
-                   
                     
                     
                     
-                    // Custom Tab Bar....
+                    
+                    
                     
                     CustomTabBar(selectedTab: $viewModel.selectedTab)
                 })
-//                    CustomTabBar(selectedTab: $viewModel.selectedTab)
-                    
                 
- 
-                    
-                           
+                
+                
+                
+                
             } else {
                 
                 SignInView()

@@ -1,9 +1,8 @@
 //
 //  LandingViewModel.swift
-//  MadRentals
+//  convey
 //
-//  Created by Galen Quinn on 10/3/21.
-//
+
 
 import SwiftUI
 import Firebase
@@ -44,7 +43,7 @@ class LandingViewModel : ObservableObject {
                 self.isSignedIn = status
                 
                 print(status)         
-                                
+                
             }).store(in: &cancellables)
         
         alertService.loadingPublisher
@@ -71,6 +70,6 @@ class LandingViewModel : ObservableObject {
         
         
         
-   
+        
     }  
 }

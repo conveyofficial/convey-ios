@@ -1,6 +1,6 @@
 //
 //  SignInView.swift
-//  MadRentals
+//  convey
 //
 //  Created by Galen Quinn on 10/3/21.
 //
@@ -26,7 +26,7 @@ struct SignInView : View {
                     .font(.headline)
                     .fontWeight(.semibold)
                     .foregroundColor(.black)
-            
+                
             }
         }
     }
@@ -37,7 +37,7 @@ struct SignInView : View {
                 .foregroundColor(.black)
             CustomTextField(image: "lock", placeHolder: "Password", txt: $viewModel.password, color : Color.gray)
                 .foregroundColor(.black)
-                
+            
         }
         .padding(.horizontal, 15)
     }
@@ -57,7 +57,7 @@ struct SignInView : View {
     var signInButton : some View {
         Button(action: {
             
-                viewModel.onSignInTap()
+            viewModel.onSignInTap()
             
         }) {
             Text("SIGN IN")
@@ -68,31 +68,31 @@ struct SignInView : View {
                 .background(Color.blue.clipShape(Capsule()).shadow(radius: 2))
         }
         .padding(.vertical, 30)
-
+        
     }
     
     var body: some View {
         
         NavigationView {
+            
+            VStack {
                 
-                VStack {
-                    
-                    titleSection
-                    
-                    Spacer()
-                    
-                    Spacer()
-                    
-                    signInFields
-    
-                    signInButton
-                    
-                    signUpButton
-                        
-                    Spacer()
-                    
-                }
-                .background(Color.white.ignoresSafeArea())
+                titleSection
+                
+                Spacer()
+                
+                Spacer()
+                
+                signInFields
+                
+                signInButton
+                
+                signUpButton
+                
+                Spacer()
+                
+            }
+            .background(Color.white.ignoresSafeArea())
         }
         .navigationViewStyle(StackNavigationViewStyle())
         

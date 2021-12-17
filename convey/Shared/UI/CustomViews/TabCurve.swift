@@ -1,3 +1,7 @@
+//
+//  TabCurve.swift
+//  convey
+//
 
 import SwiftUI
 
@@ -5,17 +9,16 @@ struct TabCurve: Shape {
     
     var tabPoint: CGFloat
     
-    // animating path...
+    
     var animatableData: CGFloat{
         get{return tabPoint}
         set{tabPoint = newValue}
     }
-
+    
     func path(in rect: CGRect) -> Path {
         
         return Path{path in
             
-            // Drawing Curve Path.....
             path.move(to: CGPoint(x: rect.width, y: rect.height))
             path.addLine(to: CGPoint(x: rect.width, y: 0))
             path.addLine(to: CGPoint(x: 0, y: 0))
