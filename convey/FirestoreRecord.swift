@@ -19,5 +19,6 @@ struct FirestoreRecord : Codable {
     var topFreqWords : [String : Int]? = nil
     var wordFreq : [String : Int]? = nil
     var vocabGrade : String? = nil
+    var dateCreated : Date? = nil
     
 }

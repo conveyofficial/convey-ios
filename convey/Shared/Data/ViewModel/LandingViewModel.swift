@@ -67,6 +67,13 @@ class LandingViewModel : ObservableObject {
                 
             }).store(in: &cancellables)
         
+        firestoreService.tabChangePublisher
+            .sink { tab in
+                
+                self.selectedTab = tab
+                
+            }.store(in: &cancellables)
+        
         
         
         

@@ -13,7 +13,9 @@ class FirestoreService {
     
     let db = Firestore.firestore()
     var userRecordsPublisher = CurrentValueSubject<[FirestoreRecord]?, Never>(nil)
+    var tabChangePublisher = PassthroughSubject<String, Never>()
     var userID = ""
+    
     
     private var alertService : AlertService
     
@@ -90,24 +92,14 @@ class FirestoreService {
                                             topFreqFillers: sortedDict,
                                             topFreqWords: record!.topFreqWords,
                                             wordFreq: record!.wordFreq,
-                                            vocabGrade: record!.vocabGrade))
+                                            vocabGrade: record!.vocabGrade,
+                                            dateCreated: record!.dateCreated))
                                     
                                     
-                                    
+                                    recordsList.sort { $0.dateCreated ?? Date() > $1.dateCreated ?? Date() }
                                     
                                 }
-                                
-                                
-                           
-                                
-                                
-                                
-                                
-                                
                             }
-                            
-                            
-                            
                         }
                     }
                     
@@ -135,7 +127,7 @@ class FirestoreService {
     
                 }
                 else {
-                    print("saved ok")
+                    print("user created")
                     
                 }
             }
@@ -184,7 +176,8 @@ class FirestoreService {
             fillerSet: nil,
             topFreqFillers: nil,
             topFreqWords: nil,
-            wordFreq: nil
+            wordFreq: nil,
+            dateCreated: Date()
         )
         
         
@@ -203,12 +196,12 @@ class FirestoreService {
                     alertService.alertLoadingPublisher.send(true)
                     alertService.alertMessagePublisher.send(err.localizedDescription)
                     
-                    
                 }
                 else {
                     
                     alertService.loadingPublisher.send(false)
                     
+                    tabChangePublisher.send("person")
                     print("saved ok")
                     
                 }
